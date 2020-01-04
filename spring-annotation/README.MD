@@ -1,4 +1,5 @@
-> com.atguigu.config 类有详细的注解。
+
+[看视频进传送门](<https://www.bilibili.com/video/av32102436/>)
 
 资料地址 https://gitee.com/adanzzz/spring_source_parsing_data
 ## 导入bean的方式：
