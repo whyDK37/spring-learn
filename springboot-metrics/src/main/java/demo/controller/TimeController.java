@@ -1,10 +1,10 @@
 package demo.controller;
 
 import demo.service.ListService;
-import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +24,11 @@ public class TimeController {
     @ResponseBody
     public String list() {
         return listService.list();
+    }
+
+    @RequestMapping(value = "/body", method = {RequestMethod.POST, RequestMethod.GET})
+    public String body(String body) {
+        System.out.println("body.length() = " + body.getBytes().length / (1024.0 * 1024));
+        return "{\"body\":" + System.currentTimeMillis() + "}";
     }
 }
