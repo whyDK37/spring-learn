@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class TimeController {
 
@@ -27,7 +29,8 @@ public class TimeController {
     }
 
     @RequestMapping(value = "/body", method = {RequestMethod.POST, RequestMethod.GET})
-    public String body(String body) {
+    public String body(String body, HttpServletRequest request) {
+        request.getParameter("body");
         System.out.println("body.length() = " + body.getBytes().length / (1024.0 * 1024));
         return "{\"body\":" + System.currentTimeMillis() + "}";
     }

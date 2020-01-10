@@ -16,12 +16,6 @@
     <name>springboot-learn</name>
     <description>springboot-learn project for Spring Boot</description>
 
-    <modules>
-        <module>springboot-metrics</module>
-        <module>spring-annotation</module>
-        <module>springmvc-annotation</module>
-        <module>servlet3.0</module>
-    </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -33,6 +27,12 @@
         <spark-version>2.0.2</spark-version>
         <sentinel.version>1.6.3</sentinel.version>
     </properties>
+    <modules>
+        <module>springboot-metrics</module>
+        <module>spring-annotation</module>
+        <module>springmvc-annotation</module>
+        <module>servlet3.0</module>
+    </modules>
 
 
     <build>
