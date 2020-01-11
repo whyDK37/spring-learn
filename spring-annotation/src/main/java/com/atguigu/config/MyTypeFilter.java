@@ -18,7 +18,6 @@ public class MyTypeFilter implements TypeFilter {
     @Override
     public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)
             throws IOException {
-        // TODO Auto-generated method stub
         //获取当前类注解的信息
         AnnotationMetadata annotationMetadata = metadataReader.getAnnotationMetadata();
         //获取当前正在扫描的类的类信息

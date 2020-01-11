@@ -13,7 +13,7 @@ import javax.servlet.annotation.HandlesTypes;
 
 import com.atguigu.service.HelloService;
 
-//容器启动的时候会将@HandlesTypes指定的这个类型下面的子类（实现类，子接口等）传递过来；
+//容器启动的时候会将 @HandlesTypes 指定的这个类型下面的子类（实现类，子接口等）传递过来；
 //传入感兴趣的类型；
 @HandlesTypes(value={HelloService.class})
 public class MyServletContainerInitializer implements ServletContainerInitializer {
@@ -21,18 +21,17 @@ public class MyServletContainerInitializer implements ServletContainerInitialize
 	/**
 	 * 应用启动的时候，会运行onStartup方法；
 	 * 
-	 * Set<Class<?>> arg0：感兴趣的类型的所有子类型；
+	 * Set<Class<?>> arg0：HandlesTypes value 中配置的类型及其所有子类型；
 	 * ServletContext arg1:代表当前Web应用的ServletContext；一个Web应用一个ServletContext；
 	 * 
-	 * 1）、使用ServletContext注册Web组件（Servlet、Filter、Listener）
-	 * 2）、使用编码的方式，在项目启动的时候给ServletContext里面添加组件；
+	 * 1）、使用 ServletContext 注册 Web 组件（Servlet、Filter、Listener）
+	 * 2）、使用编码的方式，在项目启动的时候给 ServletContext 里面添加组件；
 	 * 		必须在项目启动的时候来添加；
-	 * 		1）、ServletContainerInitializer得到的ServletContext；
-	 * 		2）、ServletContextListener得到的ServletContext；
+	 * 		1）、ServletContainerInitializer 得到的 ServletContext；
+	 * 		2）、ServletContextListener 得到的 ServletContext；
 	 */
 	@Override
 	public void onStartup(Set<Class<?>> arg0, ServletContext sc) throws ServletException {
-		// TODO Auto-generated method stub
 		System.out.println("感兴趣的类型：");
 		for (Class<?> claz : arg0) {
 			System.out.println(claz);

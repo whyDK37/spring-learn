@@ -15,14 +15,12 @@ public class Red implements ApplicationContextAware, BeanNameAware, EmbeddedValu
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        // TODO Auto-generated method stub
         System.out.println("传入的ioc：" + applicationContext);
         this.applicationContext = applicationContext;
     }
 
     @Override
     public void setBeanName(String name) {
-        // TODO Auto-generated method stub
         System.out.println("当前bean的名字：" + name);
     }
 

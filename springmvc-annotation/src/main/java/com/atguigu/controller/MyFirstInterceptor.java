@@ -12,7 +12,6 @@ public class MyFirstInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		// TODO Auto-generated method stub
 		System.out.println("preHandle..."+request.getRequestURI());
 		return true;
 	}
@@ -21,7 +20,6 @@ public class MyFirstInterceptor implements HandlerInterceptor {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		// TODO Auto-generated method stub
 		System.out.println("postHandle...");
 
 	}
@@ -30,7 +28,6 @@ public class MyFirstInterceptor implements HandlerInterceptor {
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		// TODO Auto-generated method stub
 		System.out.println("afterCompletion...");
 	}
 

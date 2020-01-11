@@ -15,7 +15,7 @@ public class HelloAsyncServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //1、支持异步处理asyncSupported=true
+        //1、支持异步处理 asyncSupported=true
         //2、开启异步模式
         System.out.println("主线程开始。。。" + Thread.currentThread() + "==>" + System.currentTimeMillis());
         AsyncContext startAsync = req.startAsync();

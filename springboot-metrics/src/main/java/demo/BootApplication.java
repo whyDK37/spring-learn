@@ -15,7 +15,8 @@ public class BootApplication implements ApplicationContextAware {
     private ApplicationContext applicationContext;
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(BootApplication.class, args);
+        SpringApplication springApplication = new SpringApplication(BootApplication.class);
+        springApplication.run(args);
     }
 
 
