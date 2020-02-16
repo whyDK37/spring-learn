@@ -10,9 +10,9 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 public class MainConfigOfPropertyValues {
 
-    @Bean
-    public Person person() {
-        return new Person();
-    }
+  @Bean
+  public Person person() {
+    return new Person();
+  }
 
 }

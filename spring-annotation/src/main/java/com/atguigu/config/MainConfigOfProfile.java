@@ -40,58 +40,58 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Configuration
 public class MainConfigOfProfile implements EmbeddedValueResolverAware {
 
-    @Value("${db.user}")
-    private String user;
+  @Value("${db.user}")
+  private String user;
 
-    private StringValueResolver valueResolver;
+  private StringValueResolver valueResolver;
 
-    private String driverClass;
-
-
-    @Bean
-    public Yellow yellow() {
-        return new Yellow();
-    }
-
-    @Profile("test")
-    @Bean("testDataSource")
-    public DataSource dataSourceTest(@Value("${db.password}") String pwd) throws Exception {
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setUser(user);
-        dataSource.setPassword(pwd);
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
-        dataSource.setDriverClass(driverClass);
-        return dataSource;
-    }
+  private String driverClass;
 
 
-    @Profile("dev")
-    @Bean("devDataSource")
-    public DataSource dataSourceDev(@Value("${db.password}") String pwd) throws Exception {
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setUser(user);
-        dataSource.setPassword(pwd);
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/ssm_crud");
-        dataSource.setDriverClass(driverClass);
-        return dataSource;
-    }
+  @Bean
+  public Yellow yellow() {
+    return new Yellow();
+  }
 
-    @Profile("prod")
-    @Bean("prodDataSource")
-    public DataSource dataSourceProd(@Value("${db.password}") String pwd) throws Exception {
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setUser(user);
-        dataSource.setPassword(pwd);
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/scw_0515");
+  @Profile("test")
+  @Bean("testDataSource")
+  public DataSource dataSourceTest(@Value("${db.password}") String pwd) throws Exception {
+    ComboPooledDataSource dataSource = new ComboPooledDataSource();
+    dataSource.setUser(user);
+    dataSource.setPassword(pwd);
+    dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+    dataSource.setDriverClass(driverClass);
+    return dataSource;
+  }
 
-        dataSource.setDriverClass(driverClass);
-        return dataSource;
-    }
 
-    @Override
-    public void setEmbeddedValueResolver(StringValueResolver resolver) {
-        this.valueResolver = resolver;
-        driverClass = valueResolver.resolveStringValue("${db.driverClass}");
-    }
+  @Profile("dev")
+  @Bean("devDataSource")
+  public DataSource dataSourceDev(@Value("${db.password}") String pwd) throws Exception {
+    ComboPooledDataSource dataSource = new ComboPooledDataSource();
+    dataSource.setUser(user);
+    dataSource.setPassword(pwd);
+    dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/ssm_crud");
+    dataSource.setDriverClass(driverClass);
+    return dataSource;
+  }
+
+  @Profile("prod")
+  @Bean("prodDataSource")
+  public DataSource dataSourceProd(@Value("${db.password}") String pwd) throws Exception {
+    ComboPooledDataSource dataSource = new ComboPooledDataSource();
+    dataSource.setUser(user);
+    dataSource.setPassword(pwd);
+    dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/scw_0515");
+
+    dataSource.setDriverClass(driverClass);
+    return dataSource;
+  }
+
+  @Override
+  public void setEmbeddedValueResolver(StringValueResolver resolver) {
+    this.valueResolver = resolver;
+    driverClass = valueResolver.resolveStringValue("${db.driverClass}");
+  }
 
 }

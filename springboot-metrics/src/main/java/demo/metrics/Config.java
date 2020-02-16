@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Bean;
 @Configurable
 public class Config {
 
-    @Bean
-    public DemoMetrics demoMetrics() {
-        return new DemoMetrics();
-    }
+  @Bean
+  public DemoMetrics demoMetrics() {
+    return new DemoMetrics();
+  }
 }

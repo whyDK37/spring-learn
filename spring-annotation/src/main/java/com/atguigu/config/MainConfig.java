@@ -8,13 +8,13 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 @Configuration  //告诉Spring这是一个配置类
 
 @ComponentScans(
-        value = {
-                @ComponentScan(value = "com.atguigu", includeFilters = {
+    value = {
+        @ComponentScan(value = "com.atguigu", includeFilters = {
 /*						@Filter(type=FilterType.ANNOTATION,classes={Controller.class}),
 						@Filter(type=FilterType.ASSIGNABLE_TYPE,classes={BookService.class}),*/
-                        @Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})
-                }, useDefaultFilters = false)
-        }
+            @Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})
+        }, useDefaultFilters = false)
+    }
 )
 //@ComponentScan  value:指定要扫描的包
 //excludeFilters = Filter[] ：指定扫描的时候按照什么规则排除那些组件
@@ -26,10 +26,10 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 //FilterType.CUSTOM：使用自定义规则
 public class MainConfig {
 
-    //给容器中注册一个Bean;类型为返回值的类型，id默认是用方法名作为id
-    @Bean("person")
-    public Person person01() {
-        return new Person("lisi", 20);
-    }
+  //给容器中注册一个Bean;类型为返回值的类型，id默认是用方法名作为id
+  @Bean("person")
+  public Person person01() {
+    return new Person("lisi", 20);
+  }
 
 }

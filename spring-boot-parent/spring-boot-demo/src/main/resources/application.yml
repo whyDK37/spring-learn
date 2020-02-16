@@ -1,0 +1,34 @@
+server:
+  port: 8080
+  mvc:
+    date-format: yyyy-MM-dd
+  tomcat:
+    max-http-post-size: -1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: http：//example.com
+        allowed-methods: GET,PUT,POST,DELETE
+    #监测
+  metrics:
+    web:
+      server:
+        auto-time-requests: true
+    export:
+      elastic:
+        host: http://172.25.18.145:9200
+
+# 配置应用的基本信息 可通过 http://127.0.0.1:8080/actuator/info 访问
+info:
+  app:
+    name: demo
+    description: demo project
+    version: 1.0
+    java.version: 1.8
+logging:
+  level:
+    root: debug

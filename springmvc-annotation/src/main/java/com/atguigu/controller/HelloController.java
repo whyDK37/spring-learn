@@ -10,22 +10,22 @@ import com.atguigu.service.HelloService;
 
 @Controller
 public class HelloController {
-	
-	@Autowired
-	HelloService helloService;
-	
-	
-	@ResponseBody
-	@RequestMapping("/hello")
-	public String hello(){
-		return helloService.sayHello("tomcat..");
-	}
-	
-	//  /WEB-INF/views/success.jsp
-	@RequestMapping("/suc")
-	public String success(){
-		return "success";
-	}
-	
+
+  @Autowired
+  HelloService helloService;
+
+
+  @ResponseBody
+  @RequestMapping("/hello")
+  public String hello() {
+    return helloService.sayHello("tomcat..");
+  }
+
+  //  /WEB-INF/views/success.jsp
+  @RequestMapping("/suc")
+  public String success() {
+    return "success";
+  }
+
 
 }

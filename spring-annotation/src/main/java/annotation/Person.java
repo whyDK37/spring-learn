@@ -6,7 +6,8 @@ import lombok.Data;
 @Data
 @Builder
 public class Person {
-    private String name;
-    private int age;
+
+  private String name;
+  private int age;
 
 }

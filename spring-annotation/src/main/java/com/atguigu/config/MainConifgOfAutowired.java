@@ -10,8 +10,7 @@ import org.springframework.context.annotation.Primary;
 
 
 /**
- * ## 自动装配
- * Spring利用依赖注入（DI），完成对IOC容器中中各个组件的依赖关系赋值；
+ * ## 自动装配 Spring利用依赖注入（DI），完成对IOC容器中中各个组件的依赖关系赋值；
  * <p>
  * <pre>
  * 1. @Autowired：自动注入：
@@ -55,28 +54,28 @@ import org.springframework.context.annotation.Primary;
  */
 @Configuration
 @ComponentScan({"com.atguigu.service", "com.atguigu.dao",
-        "com.atguigu.controller", "com.atguigu.bean"})
+    "com.atguigu.controller", "com.atguigu.bean"})
 public class MainConifgOfAutowired {
 
-    @Primary
-    @Bean("bookDao2")
-    public BookDao bookDao() {
-        BookDao bookDao = new BookDao();
-        bookDao.setLable("2");
-        return bookDao;
-    }
+  @Primary
+  @Bean("bookDao2")
+  public BookDao bookDao() {
+    BookDao bookDao = new BookDao();
+    bookDao.setLable("2");
+    return bookDao;
+  }
 
-    /**
-     * @param car
-     * @return
-     * @Bean标注的方法创建对象的时候，方法参数的值从容器中获取
-     */
-    @Bean
-    public Color color(Car car) {
-        Color color = new Color();
-        color.setCar(car);
-        return color;
-    }
+  /**
+   * @param car
+   * @return
+   * @Bean标注的方法创建对象的时候，方法参数的值从容器中获取
+   */
+  @Bean
+  public Color color(Car car) {
+    Color color = new Color();
+    color.setCar(car);
+    return color;
+  }
 
 
 }

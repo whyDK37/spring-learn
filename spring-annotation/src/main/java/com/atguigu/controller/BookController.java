@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class BookController {
 
-    @Autowired
-    private BookService bookService;
+  @Autowired
+  private BookService bookService;
 
 }

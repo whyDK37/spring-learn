@@ -11,18 +11,18 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class BootApplication implements ApplicationContextAware {
 
-    @Autowired
-    private ApplicationContext applicationContext;
+  @Autowired
+  private ApplicationContext applicationContext;
 
-    public static void main(String[] args) {
-        SpringApplication springApplication = new SpringApplication(BootApplication.class);
-        springApplication.run(args);
-    }
+  public static void main(String[] args) {
+    SpringApplication springApplication = new SpringApplication(BootApplication.class);
+    springApplication.run(args);
+  }
 
 
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
-    }
+  @Override
+  public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    this.applicationContext = applicationContext;
+  }
 
 }

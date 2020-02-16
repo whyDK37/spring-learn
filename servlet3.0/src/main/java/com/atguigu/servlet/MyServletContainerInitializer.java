@@ -15,40 +15,37 @@ import com.atguigu.service.HelloService;
 
 //容器启动的时候会将 @HandlesTypes 指定的这个类型下面的子类（实现类，子接口等）传递过来；
 //传入感兴趣的类型；
-@HandlesTypes(value={HelloService.class})
+@HandlesTypes(value = {HelloService.class})
 public class MyServletContainerInitializer implements ServletContainerInitializer {
 
-	/**
-	 * 应用启动的时候，会运行onStartup方法；
-	 * 
-	 * Set<Class<?>> arg0：HandlesTypes value 中配置的类型及其所有子类型；
-	 * ServletContext arg1:代表当前Web应用的ServletContext；一个Web应用一个ServletContext；
-	 * 
-	 * 1）、使用 ServletContext 注册 Web 组件（Servlet、Filter、Listener）
-	 * 2）、使用编码的方式，在项目启动的时候给 ServletContext 里面添加组件；
-	 * 		必须在项目启动的时候来添加；
-	 * 		1）、ServletContainerInitializer 得到的 ServletContext；
-	 * 		2）、ServletContextListener 得到的 ServletContext；
-	 */
-	@Override
-	public void onStartup(Set<Class<?>> arg0, ServletContext sc) throws ServletException {
-		System.out.println("感兴趣的类型：");
-		for (Class<?> claz : arg0) {
-			System.out.println(claz);
-		}
-		
-		//注册组件  ServletRegistration  
-		ServletRegistration.Dynamic servlet = sc.addServlet("userServlet", new UserServlet());
-		//配置servlet的映射信息
-		servlet.addMapping("/user");
-		
-		
-		//注册Listener
-		sc.addListener(UserListener.class);
-		
-		//注册Filter  FilterRegistration
-		FilterRegistration.Dynamic filter = sc.addFilter("userFilter", UserFilter.class);
-		//配置Filter的映射信息
-		filter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
-	}
+  /**
+   * 应用启动的时候，会运行onStartup方法；
+   * <p>
+   * Set<Class<?>> arg0：HandlesTypes value 中配置的类型及其所有子类型； ServletContext
+   * arg1:代表当前Web应用的ServletContext；一个Web应用一个ServletContext；
+   * <p>
+   * 1）、使用 ServletContext 注册 Web 组件（Servlet、Filter、Listener） 2）、使用编码的方式，在项目启动的时候给 ServletContext
+   * 里面添加组件； 必须在项目启动的时候来添加； 1）、ServletContainerInitializer 得到的 ServletContext；
+   * 2）、ServletContextListener 得到的 ServletContext；
+   */
+  @Override
+  public void onStartup(Set<Class<?>> arg0, ServletContext sc) throws ServletException {
+    System.out.println("感兴趣的类型：");
+    for (Class<?> claz : arg0) {
+      System.out.println(claz);
+    }
+
+    //注册组件  ServletRegistration
+    ServletRegistration.Dynamic servlet = sc.addServlet("userServlet", new UserServlet());
+    //配置servlet的映射信息
+    servlet.addMapping("/user");
+
+    //注册Listener
+    sc.addListener(UserListener.class);
+
+    //注册Filter  FilterRegistration
+    FilterRegistration.Dynamic filter = sc.addFilter("userFilter", UserFilter.class);
+    //配置Filter的映射信息
+    filter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
+  }
 }

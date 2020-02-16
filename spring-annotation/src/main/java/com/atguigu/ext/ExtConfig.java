@@ -101,9 +101,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ExtConfig {
 
-    @Bean
-    public Blue blue() {
-        return new Blue();
-    }
+  @Bean
+  public Blue blue() {
+    return new Blue();
+  }
 
 }
