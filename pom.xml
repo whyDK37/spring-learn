@@ -4,40 +4,24 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>me</groupId>
-  <artifactId>spring-learn-parent</artifactId>
+  <artifactId>spring-learn</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>spring-learn-parent</name>
+  <name>spring-learn</name>
   <description>spring-learn project for Spring Boot</description>
 
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Hoxton.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.2.0.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
   <properties>
+    <build.file.encoding>UTF-8</build.file.encoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <build.file.encoding>UTF-8</build.file.encoding>
 
     <maven.test.skip>true</maven.test.skip>
 
+    <spring.version>5.2.0-RELEASE</spring.version>
+    <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
+    <spring-cloud.version>2.2.0.RELEASE</spring-cloud.version>
     <mysql.driver.version>8.0.13</mysql.driver.version>
 
     <scala-version>2.10</scala-version>
@@ -52,8 +36,26 @@
     <module>spring-cloud-parent</module>
     <module>spring-boot-parent</module>
     <module>spring-data</module>
+    <module>spring-framework</module>
+    <module>domain</module>
   </modules>
 
+  <dependencies>
+<!--    self module-->
+    <dependency>
+      <groupId>me</groupId>
+      <artifactId>domain</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
+
+    <!-- spring framework -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
