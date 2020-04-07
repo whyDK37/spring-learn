@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me</groupId>
   <artifactId>spring-learn</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>pom</packaging>
 
   <name>spring-learn</name>
@@ -19,14 +19,17 @@
 
     <maven.test.skip>true</maven.test.skip>
 
-    <spring.version>5.2.0-RELEASE</spring.version>
+    <spring.version>5.2.0.RELEASE</spring.version>
     <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
     <spring-cloud.version>2.2.0.RELEASE</spring-cloud.version>
+
     <mysql.driver.version>8.0.13</mysql.driver.version>
 
     <scala-version>2.10</scala-version>
     <spark-version>2.0.2</spark-version>
     <sentinel.version>1.6.3</sentinel.version>
+
+    <junit.version>5.6.1</junit.version>
   </properties>
   <modules>
     <module>springboot-metrics</module>
@@ -41,13 +44,12 @@
   </modules>
 
   <dependencies>
-<!--    self module-->
+    <!--  self module-->
     <dependency>
       <groupId>me</groupId>
       <artifactId>domain</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>1.0</version>
     </dependency>
-
 
     <!-- spring framework -->
     <dependency>
