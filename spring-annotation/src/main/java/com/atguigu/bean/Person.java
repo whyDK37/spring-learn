@@ -18,6 +18,16 @@ public class Person {
   private String nickName;
 
 
+  public Person(String name, Integer age) {
+    super();
+    this.name = name;
+    this.age = age;
+  }
+
+  public Person() {
+    super();
+  }
+
   public String getNickName() {
     return nickName;
   }
@@ -40,16 +50,6 @@ public class Person {
 
   public void setAge(Integer age) {
     this.age = age;
-  }
-
-  public Person(String name, Integer age) {
-    super();
-    this.name = name;
-    this.age = age;
-  }
-
-  public Person() {
-    super();
   }
 
   @Override

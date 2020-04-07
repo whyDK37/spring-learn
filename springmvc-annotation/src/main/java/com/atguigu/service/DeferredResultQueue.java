@@ -2,7 +2,6 @@ package com.atguigu.service;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-
 import org.springframework.web.context.request.async.DeferredResult;
 
 public class DeferredResultQueue {

@@ -1,8 +1,9 @@
 package me.data.redis;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import java.sql.SQLException;
 import javax.sql.DataSource;
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -48,28 +49,11 @@ public class AppConfig {
   @Bean
   public DataSource dataSource() throws SQLException {
     // ...
-    BasicDataSource basicDataSource = new BasicDataSource();
-    basicDataSource.setUrl("jdbc:mysql://127.0.0.1:3306/test");
-    basicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-    basicDataSource.setUsername("root");
-    basicDataSource.setPassword("root");
-
-    basicDataSource.setConnectionProperties("useUnicode=true;characterEncoding=UTF8;zeroDateTimeBehavior=convertToNull;socketTimeout=160000;connectTimeout=1000;autoReconnectForPools=true");
-    basicDataSource.setInitialSize(10);
-    basicDataSource.setInitialSize(10);
-    basicDataSource.setMaxIdle(10);
-    basicDataSource.setMinIdle(5);
-
-    basicDataSource.setValidationQuery("SELECT 1");
-    basicDataSource.setTestWhileIdle(true);
-    basicDataSource.setTestOnReturn(false);
-    basicDataSource.setTestOnBorrow(false);
-    basicDataSource.setLogAbandoned(true);
-    basicDataSource.setRemoveAbandonedTimeout(180);
-    basicDataSource.setTimeBetweenEvictionRunsMillis(30000);
-    basicDataSource.setMinEvictableIdleTimeMillis(1800000);
-    basicDataSource.setNumTestsPerEvictionRun(50);
-
-    return basicDataSource;
+    HikariConfig hikariConfig = new HikariConfig();
+    hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+    hikariConfig.setUsername("root");
+    hikariConfig.setPassword("root");
+    hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
+    return new HikariDataSource(hikariConfig);
   }
 }

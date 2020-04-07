@@ -2,13 +2,12 @@ package demo.controller;
 
 import demo.service.ListService;
 import io.micrometer.core.annotation.Timed;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class TimeController {
@@ -18,8 +17,6 @@ public class TimeController {
 
   /**
    * http://127.0.0.1:8080/actuator/metrics/all.people
-   *
-   * @return
    */
   @RequestMapping("/list")
   @Timed(value = "list.time", longTask = true)

@@ -1,13 +1,13 @@
 package com.atguigu.config;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.atguigu.bean.Boss;
 import com.atguigu.bean.Car;
 import com.atguigu.bean.Color;
 import com.atguigu.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MainConifgOfAutowiredTest {
 

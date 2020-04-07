@@ -3,7 +3,13 @@ package annotation;
 import annotation.condition.LinuxCondition;
 import annotation.condition.WindowsCondition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Conditional;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
+import pojo.Person;
 
 /**
  *
@@ -20,8 +26,6 @@ public class Config {
 
   /**
    * 每次都会生成新的对象
-   *
-   * @return
    */
   @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
   @Bean

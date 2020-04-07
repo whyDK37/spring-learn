@@ -1,9 +1,13 @@
 package com.atguigu.aop;
 
-import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.*;
-
 import java.util.Arrays;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * 切面类

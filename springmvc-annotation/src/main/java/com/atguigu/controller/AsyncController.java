@@ -1,13 +1,12 @@
 package com.atguigu.controller;
 
 import com.atguigu.service.DeferredResultQueue;
+import java.util.UUID;
+import java.util.concurrent.Callable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.async.DeferredResult;
-
-import java.util.UUID;
-import java.util.concurrent.Callable;
 
 
 @Controller
@@ -51,8 +50,6 @@ public class AsyncController {
    * postHandle...（Callable的之前的返回值就是目标方法的返回值） afterCompletion...
    * <p>
    * 异步的拦截器: 1）、原生API的 AsyncListener 2）、SpringMVC：实现 AsyncHandlerInterceptor；
-   *
-   * @return
    */
   @ResponseBody
   @RequestMapping("/async01")

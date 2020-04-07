@@ -11,7 +11,7 @@ public class IOCSearch {
     DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
     XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
     reader.loadBeanDefinitions(new ClassPathResource("ioc-search.xml"));
-    
+
     System.out.println("factory.getBeanDefinitionCount() = " + factory.getBeanDefinitionCount());
     User user = factory.getBean("user", User.class);
     System.out.println(user);

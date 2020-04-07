@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>me</groupId>
   <artifactId>spring-learn</artifactId>
-  <version>1.0</version>
-  <packaging>pom</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.springframework.boot</groupId>
+      </plugin>
+    </plugins>
 
-  <name>spring-learn</name>
+  </build>
+  <dependencies>
+    <!--  self module-->
+    <dependency>
+      <artifactId>domain</artifactId>
+      <groupId>me</groupId>
+      <version>1.0</version>
+    </dependency>
+
+    <!-- spring framework -->
+    <dependency>
+      <artifactId>spring-context</artifactId>
+      <groupId>org.springframework</groupId>
+      <version>${spring.version}</version>
+    </dependency>
+  </dependencies>
   <description>spring-learn project for Spring Boot</description>
+  <groupId>me</groupId>
 
-
-  <properties>
-    <build.file.encoding>UTF-8</build.file.encoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-
-    <maven.test.skip>true</maven.test.skip>
-
-    <spring.version>5.2.0.RELEASE</spring.version>
-    <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
-    <spring-cloud.version>2.2.0.RELEASE</spring-cloud.version>
-
-    <mysql.driver.version>8.0.13</mysql.driver.version>
-
-    <scala-version>2.10</scala-version>
-    <spark-version>2.0.2</spark-version>
-    <sentinel.version>1.6.3</sentinel.version>
-
-    <junit.version>5.6.1</junit.version>
-  </properties>
+  <modelVersion>4.0.0</modelVersion>
   <modules>
     <module>springboot-metrics</module>
     <module>spring-annotation</module>
@@ -43,30 +43,31 @@
     <module>domain</module>
   </modules>
 
-  <dependencies>
-    <!--  self module-->
-    <dependency>
-      <groupId>me</groupId>
-      <artifactId>domain</artifactId>
-      <version>1.0</version>
-    </dependency>
 
-    <!-- spring framework -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-  </dependencies>
+  <name>spring-learn</name>
+  <packaging>pom</packaging>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
+  <properties>
+    <build.file.encoding>UTF-8</build.file.encoding>
+    <junit.version>5.6.1</junit.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
 
-  </build>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <maven.test.skip>true</maven.test.skip>
+    <mysql.driver.version>8.0.13</mysql.driver.version>
+    <scala-version>2.10</scala-version>
+
+    <sentinel.version>1.6.3</sentinel.version>
+    <servlet.version>3.1.0</servlet.version>
+
+    <spark-version>2.0.2</spark-version>
+    <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
+    <spring-cloud.version>2.2.0.RELEASE</spring-cloud.version>
+
+    <spring.version>5.2.0.RELEASE</spring.version>
+  </properties>
+
+  <version>1.0</version>
 
 </project>

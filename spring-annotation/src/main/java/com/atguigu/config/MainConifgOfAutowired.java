@@ -66,8 +66,6 @@ public class MainConifgOfAutowired {
   }
 
   /**
-   * @param car
-   * @return
    * @Bean标注的方法创建对象的时候，方法参数的值从容器中获取
    */
   @Bean

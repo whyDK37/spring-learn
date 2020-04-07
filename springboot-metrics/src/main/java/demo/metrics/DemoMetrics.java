@@ -3,7 +3,6 @@ package demo.metrics;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.binder.MeterBinder;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 

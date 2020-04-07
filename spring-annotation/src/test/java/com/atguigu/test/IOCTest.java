@@ -4,11 +4,10 @@ import com.atguigu.bean.Blue;
 import com.atguigu.bean.Person;
 import com.atguigu.config.MainConfig;
 import com.atguigu.config.MainConfig2;
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
-
-import java.util.Map;
 
 public class IOCTest {
 

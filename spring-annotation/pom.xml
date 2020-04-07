@@ -1,64 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>spring-annotation</artifactId>
+  <dependencies>
+    <dependency>
+      <artifactId>domain</artifactId>
+      <groupId>me</groupId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-context</artifactId>
+      <groupId>org.springframework</groupId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-aspects</artifactId>
+      <groupId>org.springframework</groupId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-jdbc</artifactId>
+      <groupId>org.springframework</groupId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>javax.inject</artifactId>
+      <groupId>javax.inject</groupId>
+      <version>1</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>HikariCP</artifactId>
+      <groupId>com.zaxxer</groupId>
+      <version>3.4.2</version>
+    </dependency>
+
+
+    <dependency>
+      <artifactId>mysql-connector-java</artifactId>
+      <groupId>mysql</groupId>
+      <version>5.1.47</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>junit-jupiter-api</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>${junit.version}</version>
+    </dependency>
+  </dependencies>
+
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <artifactId>spring-learn</artifactId>
     <groupId>me</groupId>
     <version>1.0</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
-
-  <artifactId>spring-annotation</artifactId>
-
-  <dependencies>
-    <dependency>
-      <groupId>me</groupId>
-      <artifactId>domain</artifactId>
-      <version>1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aspects</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.inject</groupId>
-      <artifactId>javax.inject</artifactId>
-      <version>1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>c3p0</groupId>
-      <artifactId>c3p0</artifactId>
-      <version>0.9.1.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.47</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 
 </project>

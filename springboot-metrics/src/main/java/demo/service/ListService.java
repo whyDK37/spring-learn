@@ -2,10 +2,9 @@ package demo.service;
 
 import demo.metrics.JobMetrics;
 import io.micrometer.core.annotation.Timed;
+import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Random;
 
 @Service
 public class ListService {

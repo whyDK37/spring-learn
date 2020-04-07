@@ -5,11 +5,10 @@ import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Timer;
 import io.micrometer.core.instrument.binder.MeterBinder;
-import org.springframework.stereotype.Component;
-
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
 @Component
 public class JobMetrics implements MeterBinder {

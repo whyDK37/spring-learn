@@ -1,9 +1,8 @@
 package com.atguigu;
 
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
 import com.atguigu.config.AppConfig;
 import com.atguigu.config.RootConfig;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 //web容器启动的时候创建对象；调用方法来初始化容器以前前端控制器
 public class MyWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

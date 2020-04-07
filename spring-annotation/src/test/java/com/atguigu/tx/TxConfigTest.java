@@ -3,8 +3,6 @@ package com.atguigu.tx;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class TxConfigTest {
 
   @Test

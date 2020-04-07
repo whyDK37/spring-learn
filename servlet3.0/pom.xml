@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <parent>
-    <artifactId>spring-learn</artifactId>
-    <groupId>me</groupId>
-    <version>1.0</version>
-  </parent>
-  <modelVersion>4.0.0</modelVersion>
-
   <artifactId>servlet3.0</artifactId>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
-
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.4</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>2.4</version>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>8</source>
           <target>8</target>
         </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
       </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <artifactId>spring-webmvc</artifactId>
+      <groupId>org.springframework</groupId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>javax.servlet-api</artifactId>
+      <groupId>javax.servlet</groupId>
+      <scope>provided</scope>
+      <version>3.1.0</version>
+    </dependency>
+  </dependencies>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>spring-learn</artifactId>
+    <groupId>me</groupId>
+    <version>1.0</version>
+  </parent>
 </project>

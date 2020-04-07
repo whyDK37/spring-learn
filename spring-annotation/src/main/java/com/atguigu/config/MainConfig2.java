@@ -9,7 +9,11 @@ import com.atguigu.condition.MyImportBeanDefinitionRegistrar;
 import com.atguigu.condition.MyImportSelector;
 import com.atguigu.condition.WindowsCondition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Lazy;
 
 //类中组件统一设置。满足当前条件，这个类中配置的所有bean注册才能生效；
 @Conditional({WindowsCondition.class})

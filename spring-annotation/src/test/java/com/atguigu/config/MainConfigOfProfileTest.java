@@ -1,12 +1,11 @@
 package com.atguigu.config;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import com.atguigu.bean.Yellow;
+import javax.sql.DataSource;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import javax.sql.DataSource;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MainConfigOfProfileTest {
 

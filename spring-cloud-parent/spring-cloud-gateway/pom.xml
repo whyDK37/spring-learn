@@ -1,31 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <parent>
-    <groupId>me</groupId>
-    <artifactId>spring-cloud-parent</artifactId>
-    <version>1.0</version>
-  </parent>
-  <modelVersion>4.0.0</modelVersion>
-
   <artifactId>spring-cloud-gateway</artifactId>
-
   <dependencies>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.springframework.boot</groupId>
     </dependency>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
+      <groupId>org.springframework.boot</groupId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-gateway</artifactId>
+      <groupId>org.springframework.cloud</groupId>
     </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>${spring-boot.version}</version>
+      </dependency>
+      <dependency>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <groupId>org.springframework.cloud</groupId>
+        <version>${spring-cloud.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>spring-cloud-parent</artifactId>
+    <groupId>me</groupId>
+    <version>1.0</version>
+  </parent>
 
 </project>
