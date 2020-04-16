@@ -3061,8 +3061,8 @@ public void refresh() throws BeansException, IllegalStateException {
 
       finally {
          // Reset common introspection caches in Spring's core, since we
-         // might not ever need metadata for singleton beans anymore...
-         resetCommonCaches();
+         configuration.metadata
+configuration.metadata resetCommonCaches();
       }
    }
 }

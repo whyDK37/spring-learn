@@ -1,9 +1,30 @@
 package pojo;
 
+import java.util.List;
+
 public class User {
 
   private Integer id;
   private String name;
+
+  private CityEnum city;
+  private List<CityEnum> workCities;
+
+  public CityEnum getCity() {
+    return city;
+  }
+
+  public void setCity(CityEnum city) {
+    this.city = city;
+  }
+
+  public void setWorkCities(List<CityEnum> cities) {
+    this.workCities = cities;
+  }
+
+  public List<CityEnum> getWorkCities() {
+    return this.workCities;
+  }
 
   public Integer getId() {
     return id;
@@ -26,6 +47,8 @@ public class User {
     return "User{" +
         "id=" + id +
         ", name='" + name + '\'' +
+        ", city=" + city +
+        ", workCities=" + workCities +
         '}';
   }
 }
