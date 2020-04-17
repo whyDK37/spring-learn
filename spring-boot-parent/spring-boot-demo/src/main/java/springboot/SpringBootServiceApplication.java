@@ -1,4 +1,4 @@
-package me.demo;
+package springboot;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,9 @@ public class SpringBootServiceApplication {
   private static final Logger logger = LoggerFactory.getLogger(SpringBootServiceApplication.class);
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringBootServiceApplication.class, args);
+    SpringApplication springApplication = new SpringApplication(SpringBootServiceApplication.class);
+
+    springApplication.run(args);
 
   }
 }

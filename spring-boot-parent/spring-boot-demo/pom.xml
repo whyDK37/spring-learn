@@ -2,23 +2,13 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>spring-boot-parent</artifactId>
+    <groupId>me</groupId>
+    <version>1.0</version>
+  </parent>
   <artifactId>spring-boot-demo</artifactId>
-  <dependencies>
-    <dependency>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <groupId>org.springframework.boot</groupId>
-    </dependency>
-    <dependency>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <groupId>org.springframework.boot</groupId>
-    </dependency>
-
-    <dependency>
-      <artifactId>aspectjrt</artifactId>
-      <groupId>org.aspectj</groupId>
-    </dependency>
-  </dependencies>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -30,12 +20,28 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
 
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>spring-boot-parent</artifactId>
-    <groupId>me</groupId>
-    <version>1.0</version>
-  </parent>
+    <dependency>
+      <artifactId>aspectjrt</artifactId>
+      <groupId>org.aspectj</groupId>
+    </dependency>
+  </dependencies>
+
 
 </project>
