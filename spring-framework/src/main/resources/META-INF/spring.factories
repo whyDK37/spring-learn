@@ -1,0 +1,4 @@
+# auto configuration
+org.springframework.beans.factory.BeanFactory=\
+org.springframework.beans.factory.support.DefaultListableBeanFactory,\
+org.springframework.jndi.support.SimpleJndiBeanFactory

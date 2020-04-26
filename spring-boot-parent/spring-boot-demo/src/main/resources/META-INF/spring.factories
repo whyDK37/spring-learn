@@ -1,0 +1,18 @@
+# auto configuration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+springboot.autoconf.configuration.HelloWorldAutoConfiguration
+
+# ApplicationContextInitializer configuration
+org.springframework.context.ApplicationContextInitializer=\
+springboot.context.AfterHelloWorldApplicationContextInitializer,\
+springboot.context.HelloWorldApplicationContextInitializer
+
+# ApplicationListener configuration
+org.springframework.context.ApplicationListener=\
+springboot.listener.AfterHelloWorldApplicationListener,\
+springboot.listener.HelloWorldApplicationListener,\
+springboot.listener.BeforeConfigFileApplicationListener
+
+# SpringApplicationRunListener configuration
+org.springframework.boot.SpringApplicationRunListener=\
+springboot.runlistener.HelloWorldRunListener

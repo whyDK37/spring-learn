@@ -20,11 +20,38 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.springframework.boot</groupId>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
     <dependency>
       <artifactId>spring-boot-starter-web</artifactId>
       <groupId>org.springframework.boot</groupId>
     </dependency>
+
+
+    <dependency>
+      <artifactId>jstl</artifactId>
+      <groupId>javax.servlet</groupId>
+    </dependency>
+
+
+    <!-- Provided -->
+    <dependency>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>tomcat-embed-jasper</artifactId>
+      <groupId>org.apache.tomcat.embed</groupId>
+    </dependency>
+
     <dependency>
       <artifactId>spring-boot-starter-test</artifactId>
       <groupId>org.springframework.boot</groupId>
