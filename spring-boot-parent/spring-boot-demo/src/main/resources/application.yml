@@ -9,6 +9,14 @@ server:
 spring.mvc.view.prefix: /WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
 
+
+
+# Thymeleaf 配置
+spring.thymeleaf.prefix: classpath:/thymeleaf/
+spring.thymeleaf.suffix: .html
+## 取消缓存
+spring.thymeleaf.cache: false
+
 management:
   endpoints:
     web:

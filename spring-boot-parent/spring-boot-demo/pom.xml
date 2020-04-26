@@ -41,6 +41,11 @@
       <groupId>javax.servlet</groupId>
     </dependency>
 
+    <!-- Thymeleaf 模板 -->
+    <dependency>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
 
     <!-- Provided -->
     <dependency>
