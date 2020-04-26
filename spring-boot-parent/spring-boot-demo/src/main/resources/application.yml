@@ -6,8 +6,9 @@ server:
     max-http-post-size: -1
 
 # mvc
-spring.mvc.view.prefix: /jsp/
+spring.mvc.view.prefix: /WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
+
 management:
   endpoints:
     web:

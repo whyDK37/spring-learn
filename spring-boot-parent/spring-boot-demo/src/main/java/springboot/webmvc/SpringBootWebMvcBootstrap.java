@@ -13,7 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootWebMvcBootstrap {
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringBootWebMvcBootstrap.class, args);
+    SpringApplication springApplication = new SpringApplication(SpringBootWebMvcBootstrap.class);
+
+    springApplication.run(args);
   }
 
 }
