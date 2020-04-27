@@ -20,6 +20,7 @@ import org.springframework.web.servlet.view.JstlView;
  * @since 2018/5/20
  */
 @Configuration
+//配置了 EnableWebMvc，WebMvcAutoConfiguration 就不会加载了
 //@EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
 
