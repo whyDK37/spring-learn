@@ -68,7 +68,7 @@
     <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
     <spring-cloud.version>2.2.0.RELEASE</spring-cloud.version>
 
-    <spring.version>5.2.0.RELEASE</spring.version>
+    <spring.version>5.2.5.RELEASE</spring.version>
   </properties>
 
 
