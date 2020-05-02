@@ -1,0 +1,62 @@
+@startuml
+actor User
+User -> DispatchServlet : doDispatch
+DispatchServlet -> DispatchServlet : getHandler，遍历 this.handlerMappings return HandlerExecutionChain
+DispatchServlet -> DispatchServlet : getHandlerAdapter, 遍历 this.handlerAdapters
+DispatchServlet -> HandlerAdapter : handle, 
+HandlerAdapter -> HandlerAdapter : handleInternal, 
+HandlerAdapter -> HandlerAdapter : invokeHandlerMethod, 
+HandlerAdapter -> ServletInvocableHandlerMethod: invokeAndHandle
+ServletInvocableHandlerMethod -> HandlerMethodReturnValueHandlerComposite:  handleReturnValue 
+HandlerMethodReturnValueHandlerComposite->HandlerMethodReturnValueHandlerComposite:selectHandler, 遍历 this.returnValueHandlers
+HandlerMethodReturnValueHandlerComposite -> HandlerMethodReturnValueHandler:handleReturnValue
+ServletInvocableHandlerMethod->ServletInvocableHandlerMethod: getModelAndView
+HandlerAdapter->DispatchServlet: return ModelAndView
+DispatchServlet->DispatchServlet: applyDefaultViewName
+DispatchServlet->HandlerExecutionChain: applyPostHandle, 获取 getInterceptors(), 依次执行 interceptor.postHandle 方法
+DispatchServlet-> DispatchServlet: processDispatchResult
+DispatchServlet-> DispatchServlet: render, 如果是返回视图的 mv
+DispatchServlet-> resolveViewName: resolveViewName, 遍历 this.viewResolvers
+
+    DispatchServlet-> ContentNegotiatingViewResolver: resolveViewName， 重点！
+        group getMediaTypes
+        ContentNegotiatingViewResolver->ContentNegotiationManager:resolveMediaTypes, 遍历 strategies 策略集合，获取请求媒体直到获取非 */* 
+        return acceptableMediaTypes
+        ContentNegotiatingViewResolver->ContentNegotiatingViewResolver:getProducibleMediaTypes, \n返回 producibleMediaTypes
+        return selectedMediaTypes
+        end
+
+        group getCandidateViews
+        ContentNegotiatingViewResolver->ContentNegotiatingViewResolver: 遍历 viewResolvers
+            loop viewResolvers
+            loop requestedMediaTypes
+                ContentNegotiatingViewResolver->ContentNegotiationManager:resolveFileExtensions
+                return extensions
+                loop extensions
+                ContentNegotiatingViewResolver->ViewResolver:resolveViewName
+                return view
+                  note left
+                  添加到 candidateViews
+                  end note
+                end
+            end 
+            end
+        end    
+
+        group getBestView
+            loop requestedMediaTypes
+                loop candidateViews
+                ContentNegotiatingViewResolver->MediaType:parseMediaType
+                return candidateContentType
+                note left
+                    返回 isCompatibleWith 的 candidateView
+                    end note
+                end
+            end
+        end
+
+DispatchServlet-> View: render 返回结果 
+DispatchServlet->HandlerExecutionChain: triggerAfterCompletion, 遍历 getInterceptors() ，调用 interceptor.afterCompletion
+
+DispatchServlet->User
+@enduml

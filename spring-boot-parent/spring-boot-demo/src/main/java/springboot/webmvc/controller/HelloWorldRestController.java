@@ -1,9 +1,8 @@
 package springboot.webmvc.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * HelloWorld {@link Controller}
@@ -11,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author 小马哥
  * @since 2018/5/20
  */
-@Controller
-public class HelloWorldController {
+@RestController
+public class HelloWorldRestController {
 
-  @RequestMapping("/web/hello")
-  public String hello(@RequestParam(required = false) Integer value, Model model) {
+  @RequestMapping("/web/rest")
+  public String test() {
     System.out.println("web mvc hello");
-    return "hello";
+    return "hello rest";
   }
 
 }
