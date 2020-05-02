@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldRestController {
 
   @RequestMapping("/web/rest")
-  public String test() {
+  public String webRest() {
     System.out.println("web mvc hello");
     return "hello rest";
   }

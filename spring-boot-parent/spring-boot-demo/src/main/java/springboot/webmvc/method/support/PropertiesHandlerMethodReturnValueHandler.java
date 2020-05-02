@@ -21,6 +21,9 @@ import springboot.webmvc.http.converter.PropertiesHttpMessageConverter;
  */
 public class PropertiesHandlerMethodReturnValueHandler implements HandlerMethodReturnValueHandler {
 
+  // 复用 PropertiesHttpMessageConverter
+  private PropertiesHttpMessageConverter converter = new PropertiesHttpMessageConverter();
+
   @Override
   public boolean supportsReturnType(MethodParameter returnType) {
     // 判断方法的返回类型，是否与 Properties 类型匹配
@@ -33,8 +36,6 @@ public class PropertiesHandlerMethodReturnValueHandler implements HandlerMethodR
 
     // 强制装换
     Properties properties = (Properties) returnValue;
-    // 复用 PropertiesHttpMessageConverter
-    PropertiesHttpMessageConverter converter = new PropertiesHttpMessageConverter();
 
     ServletWebRequest servletWebRequest = (ServletWebRequest) webRequest;
     // Servlet Request API

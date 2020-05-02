@@ -102,7 +102,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
       public void postHandle(HttpServletRequest request, HttpServletResponse response,
           Object handler, ModelAndView modelAndView) throws Exception {
         System.out.println("postHandle...");
+        response.addHeader("X-SPRINT", "MVC");
       }
+
     });
   }
 }

@@ -20,6 +20,9 @@ import springboot.webmvc.http.converter.PropertiesHttpMessageConverter;
  */
 public class PropertiesHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
 
+  // 复用 PropertiesHttpMessageConverter
+  private PropertiesHttpMessageConverter converter = new PropertiesHttpMessageConverter();
+
   @Override
   public boolean supportsParameter(MethodParameter parameter) {
     return Properties.class.equals(parameter.getParameterType());
@@ -28,10 +31,6 @@ public class PropertiesHandlerMethodArgumentResolver implements HandlerMethodArg
   @Override
   public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
       NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-
-    // 复用 PropertiesHttpMessageConverter
-    PropertiesHttpMessageConverter converter = new PropertiesHttpMessageConverter();
-
     ServletWebRequest servletWebRequest = (ServletWebRequest) webRequest;
     // Servlet Request API
     HttpServletRequest request = servletWebRequest.getRequest();
