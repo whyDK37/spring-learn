@@ -35,6 +35,18 @@
       <groupId>org.springframework.boot</groupId>
     </dependency>
 
+    <dependency>
+      <artifactId>domain</artifactId>
+      <groupId>me</groupId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>guava</artifactId>
+      <groupId>com.google.guava</groupId>
+      <version>${guava.version}</version>
+    </dependency>
+
 
     <dependency>
       <artifactId>jstl</artifactId>

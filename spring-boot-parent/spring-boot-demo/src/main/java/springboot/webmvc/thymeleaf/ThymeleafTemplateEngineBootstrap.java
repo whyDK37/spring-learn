@@ -19,31 +19,31 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
  */
 public class ThymeleafTemplateEngineBootstrap {
 
-    public static void main(String[] args) throws IOException {
-        // 构建引擎
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        // 创建渲染上下文
-        Context context = new Context();
-        context.setVariable("message", "我的世界");
+  public static void main(String[] args) throws IOException {
+    // 构建引擎
+    SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+    // 创建渲染上下文
+    Context context = new Context();
+    context.setVariable("message", "我的世界");
 
-        // 读取内容从 classpath:/templates/thymeleaf/hello-world.html
-        // ResourceLoader
-        ResourceLoader resourceLoader = new DefaultResourceLoader();
-        // 通过 classpath:/templates/thymeleaf/hello-world.html Resource
-        Resource resource = resourceLoader.getResource("classpath:/thymeleaf/hello-world.html");
-        File templateFile = resource.getFile();
-        // 文件流
-        FileInputStream inputStream = new FileInputStream(templateFile);
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        // Copy
-        IOUtils.copy(inputStream, outputStream);
+    // 读取内容从 classpath:/templates/thymeleaf/hello-world.html
+    // ResourceLoader
+    ResourceLoader resourceLoader = new DefaultResourceLoader();
+    // 通过 classpath:/templates/thymeleaf/hello-world.html Resource
+    Resource resource = resourceLoader.getResource("classpath:/thymeleaf/hello-world.html");
+    File templateFile = resource.getFile();
+    // 文件流
+    FileInputStream inputStream = new FileInputStream(templateFile);
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    // Copy
+    IOUtils.copy(inputStream, outputStream);
 
-        inputStream.close();
-        // 模板的内容
-        String content = outputStream.toString("UTF-8");
-        // 渲染（处理）结果
-        String result = templateEngine.process(content, context);
-        // 输出渲染（处理）结果
-        System.out.println(result);
-    }
+    inputStream.close();
+    // 模板的内容
+    String content = outputStream.toString("UTF-8");
+    // 渲染（处理）结果
+    String result = templateEngine.process(content, context);
+    // 输出渲染（处理）结果
+    System.out.println(result);
+  }
 }

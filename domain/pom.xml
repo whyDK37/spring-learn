@@ -2,17 +2,10 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <artifactId>domain</artifactId>
-
-  <dependencies>
-    <dependency>
-      <artifactId>lombok</artifactId>
-      <groupId>org.projectlombok</groupId>
-      <version>1.18.10</version>
-    </dependency>
-  </dependencies>
   <groupId>me</groupId>
+
   <modelVersion>4.0.0</modelVersion>
+  <artifactId>domain</artifactId>
   <properties>
     <build.file.encoding>UTF-8</build.file.encoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -20,4 +13,12 @@
   </properties>
 
   <version>1.0</version>
+  <dependencies>
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <version>1.18.10</version>
+    </dependency>
+  </dependencies>
+
 </project>

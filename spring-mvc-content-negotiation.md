@@ -21,10 +21,13 @@
     - 路径扩展名： PathExtensionContentNegotiationStrategy
 
 
+# 测试代码
 ```
+# web 内容协商
 curl -H "Accept-Language:zh-CN,zh;q=0.9" -H "Accept:text/html"  http://localhost:8080/web/hello
 curl -H "Accept-Language:zh-CN,zh;q=0.9" -H "Accept:application/xml"  http://localhost:8080/web/hello
 
-
-curl -H "Accept-Language:zh-CN,zh;q=0.9" -H "Accept:application/xml"  http://localhost:8080/web/rest
+rest 内容协商
+curl -X POST -H "Content-Type:application/json" --data '{"id":21,"name":"内容"}' http://localhost:8080/web/echo/user 
+curl -X POST -H "Content-Type:application/json" -H "Accept:application/xml" --data '{"id":21,"name":"内容"}' http://localhost:8080/web/echo/user 
 ```

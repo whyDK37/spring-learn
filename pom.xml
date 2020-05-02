@@ -2,7 +2,8 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <artifactId>spring-learn</artifactId>
+
+
   <build>
     <plugins>
       <plugin>
@@ -27,10 +28,13 @@
       <version>${spring.version}</version>
     </dependency>
   </dependencies>
-  <description>spring-learn project for Spring Boot</description>
+  <artifactId>spring-learn</artifactId>
   <groupId>me</groupId>
-
   <modelVersion>4.0.0</modelVersion>
+  <description>spring-learn project for Spring Boot</description>
+  <name>spring-learn</name>
+
+
   <modules>
     <module>springboot-metrics</module>
     <module>spring-annotation</module>
@@ -43,8 +47,6 @@
     <module>domain</module>
   </modules>
 
-
-  <name>spring-learn</name>
   <packaging>pom</packaging>
 
   <properties>
@@ -61,6 +63,7 @@
     <sentinel.version>1.6.3</sentinel.version>
     <servlet.version>3.1.0</servlet.version>
 
+    <guava.version>29.0-jre</guava.version>
     <spark-version>2.0.2</spark-version>
     <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
     <spring-cloud.version>2.2.0.RELEASE</spring-cloud.version>
@@ -68,6 +71,6 @@
     <spring.version>5.2.0.RELEASE</spring.version>
   </properties>
 
-  <version>1.0</version>
 
+  <version>1.0</version>
 </project>
