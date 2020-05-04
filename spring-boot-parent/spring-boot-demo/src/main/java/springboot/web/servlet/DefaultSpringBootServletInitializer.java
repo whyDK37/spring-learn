@@ -12,7 +12,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class DefaultSpringBootServletInitializer extends SpringBootServletInitializer {
 
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        builder.sources(SpringBootServletBootstrap.class);
+        builder.sources(SpringBootservletApplication.class);
         return builder;
     }
 
