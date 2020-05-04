@@ -1,12 +1,20 @@
 package springboot.web.servlet;
 
 import java.util.EnumSet;
+import javax.servlet.DispatcherType;
+import javax.servlet.FilterRegistration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.ServletContextInitializer;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 @SpringBootApplication()
 @EnableAspectJAutoProxy(proxyTargetClass = true)
@@ -22,8 +30,8 @@ public class SpringBootservletApplication {
 
   @Bean
   @Order(Ordered.HIGHEST_PRECEDENCE)
-  public ServletRegistrationBean asyncServletServletRegistrationBean(){
-    ServletRegistrationBean registrationBean =  new ServletRegistrationBean(new AsyncServlet(),"/");
+  public ServletRegistrationBean<AsyncServlet> asyncServletServletRegistrationBean(){
+    ServletRegistrationBean<AsyncServlet> registrationBean =  new ServletRegistrationBean<>(new AsyncServlet(),"/");
     registrationBean.setName("MyAsyncServlet");
     return registrationBean;
   }
