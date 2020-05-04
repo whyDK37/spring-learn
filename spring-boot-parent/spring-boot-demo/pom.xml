@@ -20,14 +20,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <groupId>org.springframework.boot</groupId>
-      </plugin>
-    </plugins>
-  </build>
 
   <dependencies>
     <dependency>
@@ -86,6 +78,15 @@
       <groupId>org.aspectj</groupId>
     </dependency>
   </dependencies>
+
+  <!--  <build>-->
+  <!--    <plugins>-->
+  <!--      <plugin>-->
+  <!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
+  <!--        <groupId>org.springframework.boot</groupId>-->
+  <!--      </plugin>-->
+  <!--    </plugins>-->
+  <!--  </build>-->
 
 
 </project>

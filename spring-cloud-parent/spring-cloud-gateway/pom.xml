@@ -15,8 +15,9 @@
       <groupId>org.springframework.boot</groupId>
     </dependency>
     <dependency>
-      <artifactId>spring-cloud-starter-gateway</artifactId>
       <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-gateway</artifactId>
+      <version>${spring-cloud.version}</version>
     </dependency>
   </dependencies>
 
