@@ -10,36 +10,40 @@ public class User {
   private CityEnum city;
   private List<CityEnum> workCities;
 
-  public CityEnum getCity() {
-    return city;
-  }
-
-  public void setCity(CityEnum city) {
-    this.city = city;
-  }
-
-  public void setWorkCities(List<CityEnum> cities) {
-    this.workCities = cities;
-  }
-
-  public List<CityEnum> getWorkCities() {
-    return this.workCities;
-  }
-
   public Integer getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public User setId(Integer id) {
     this.id = id;
+    return this;
   }
 
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public User setName(String name) {
     this.name = name;
+    return this;
+  }
+
+  public CityEnum getCity() {
+    return city;
+  }
+
+  public User setCity(CityEnum city) {
+    this.city = city;
+    return this;
+  }
+
+  public List<CityEnum> getWorkCities() {
+    return workCities;
+  }
+
+  public User setWorkCities(List<CityEnum> workCities) {
+    this.workCities = workCities;
+    return this;
   }
 
   @Override

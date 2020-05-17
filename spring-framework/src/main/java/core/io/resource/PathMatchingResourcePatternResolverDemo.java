@@ -1,4 +1,4 @@
-package core.io;
+package core.io.resource;
 
 import java.io.IOException;
 import java.util.Comparator;
@@ -9,6 +9,9 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 
+/**
+ * 路径匹配 demo
+ */
 public class PathMatchingResourcePatternResolverDemo {
 
   public static void main(String[] args) throws IOException {

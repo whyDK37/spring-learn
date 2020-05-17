@@ -1,4 +1,4 @@
-package core.io;
+package core.io.resource;
 
 import org.springframework.core.io.ClassPathResource;
 

@@ -15,7 +15,7 @@ public class IOCSearch {
 
     // bring in some property values from a Properties file
     PropertySourcesPlaceholderConfigurer cfg = new PropertySourcesPlaceholderConfigurer();
-    cfg.setLocation(new ClassPathResource("user.properties"));
+    cfg.setLocation(new ClassPathResource("META-INF/user.properties"));
 
     // now actually do the replacement
     cfg.postProcessBeanFactory(factory);

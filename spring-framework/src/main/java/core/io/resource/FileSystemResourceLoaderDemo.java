@@ -1,6 +1,5 @@
-package core.io;
+package core.io.resource;
 
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.FileSystemResourceLoader;
 import org.springframework.core.io.Resource;
 
