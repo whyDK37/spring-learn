@@ -19,6 +19,12 @@ import pojo.User;
 @Configuration
 public class InjectionResourceDemo {
 
+  @Value("${no:not defined}")
+  private String noDefine;
+
+  @Value("${catalog.name}")
+  private String catalog;
+
   @Value("#{systemProperties['os.name']}")
   private String osName; // 注入操作系统属性
 
@@ -48,6 +54,8 @@ public class InjectionResourceDemo {
 
   @PostConstruct
   public void init() throws IOException {
+    System.out.println("noDefine = " + noDefine);
+    System.out.println("catalog = " + catalog);
     System.out.println("osName = " + osName);
     System.out.println(defaultProperty);
     System.out.println("------------------");
