@@ -67,18 +67,24 @@ private Resource[] resources;
 ```
 
 ## 原理剖析
-从使用上我们可以看到
-@Value 有这多的使用方式，他是怎么实现的呢，我想到的第一步是看下 doc 上有没有蛛丝马迹。
+从使用上我们可以看到 @Value 有这多的使用方式，他是怎么实现的呢，我想到的第一步是看下 doc 上有没有蛛丝马迹。
 
 ```
-Note that actual processing of the @Value annotation is performed by a BeanPostProcessor which in turn means that you cannot use @Value within BeanPostProcessor or BeanFactoryPostProcessor types. Please consult the javadoc for the AutowiredAnnotationBeanPostProcessor class (which, by default, checks for the presence of this annotation).
+Note that actual processing of the @Value annotation is performed by a BeanPostProcessor 
+which in turn means that you cannot use @Value within BeanPostProcessor or
+BeanFactoryPostProcessor types. 
+Please consult the javadoc for the AutowiredAnnotationBeanPostProcessor class
+(which, by default, checks for the presence of this annotation).
 ```
 线索指向了 AutowiredAnnotationBeanPostProcessor 的 doc。
+```
+BeanPostProcessor implementation that autowires annotated fields, setter methods, 
+and arbitrary config methods. Such members to be injected are detected through annotations: 
+by default, Spring's @Autowired and @Value annotations.
+Also supports JSR-330's @Inject annotation, if available, as a direct alternative to 
+Spring's own @Autowired.
+```
 
-```
-BeanPostProcessor implementation that autowires annotated fields, setter methods, and arbitrary config methods. Such members to be injected are detected through annotations: by default, Spring's @Autowired and @Value annotations.
-Also supports JSR-330's @Inject annotation, if available, as a direct alternative to Spring's own @Autowired.
-```
 
 找对地方了，知道 AutowiredAnnotationBeanPostProcessor 是处理 Autowired，Value，Inject 注解的。
 这里我就不不详细分析源码了，有几点注意的地方我标记一下。
@@ -86,6 +92,8 @@ Also supports JSR-330's @Inject annotation, if available, as a direct alternativ
 - #postProcessProperties 方法实现了具体的注入逻辑。
   - AutowiredAnnotationBeanPostProcessor.AutowiredFieldElement#inject 
     - AutowireCapableBeanFactory#resolveDependency(org.springframework.beans.factory.config.DependencyDescriptor, java.lang.String, java.util.Set<java.lang.String>, org.springframework.beans.TypeConverter)  涉及到类型转换 
+
+    
 # 参考
 - [1.9.8. Using @Value](https://docs.spring.io/spring/docs/5.3.0-SNAPSHOT/spring-framework-reference/core.html#beans-value-annotations)
 - [Spring Expression Language (SpEL)](https://docs.spring.io/spring/docs/5.3.0-SNAPSHOT/spring-framework-reference/core.html#expressions)
