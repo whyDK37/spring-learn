@@ -110,8 +110,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *
  * AnnotationAwareAspectJAutoProxyCreator 是 InstantiationAwareBeanPostProcessor类型的后置处理器，作用：
  * 1）、每一个bean创建之前，调用 postProcessBeforeInstantiation()， 下面是方法处理流程；
- * 		例子：关心MathCalculator和LogAspect的创建
- * 		1）、判断当前bean是否在advisedBeans中（保存了所有需要增强bean）
+ * 		例子：关心 MathCalculator 和 LogAspect 的创建
+ * 		1）、判断当前bean是否在 advisedBeans 中（保存了所有需要增强bean）
  * 		2）、判断当前bean是否是基础类型的 Advice、Pointcut、Advisor、AopInfrastructureBean，
  * 			或者是否是切面（@Aspect）
  * 		3）、是否需要跳过
@@ -120,9 +120,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * 				判断每一个增强器是否是 AspectJPointcutAdvisor 类型的；返回true
  * 			2）、永远返回false
  *
- * 2）、创建对象之后，调用 postProcessAfterInitialization；
+ * 2）、创建对象之后，调用 postProcessAfterInitialization, 创建代理对象；
  * 		return wrapIfNecessary(bean, beanName, cacheKey);//包装如果需要的情况下
- * 		1）、获取当前bean的所有增强器（通知方法）  Object[]  specificInterceptors
+ * 		1）、获取当前bean的所有增强器（通知方法）  Object[]  specificInterceptors 或者  findEligibleAdvisors  5.0.4+
  * 			1、findCandidateAdvisors 找到候选的所有的增强器（找哪些通知方法是需要切入当前bean方法的）
  * 			2、findAdvisorsThatCanApply 获取到能在bean使用的增强器。
  * 			3、给增强器排序
