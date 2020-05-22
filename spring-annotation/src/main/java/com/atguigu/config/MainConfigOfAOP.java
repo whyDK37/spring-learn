@@ -125,7 +125,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * 		1）、获取当前bean的所有增强器（通知方法）  Object[]  specificInterceptors 或者  findEligibleAdvisors  5.0.4+
  * 			1、findCandidateAdvisors 找到候选的所有的增强器（找哪些通知方法是需要切入当前bean方法的）
  * 			2、findAdvisorsThatCanApply 获取到能在bean使用的增强器。
- * 			3、给增强器排序
+ * 			3、给增强器排序 sortAdvisors
  * 		2）、保存当前 bean 在 advisedBeans 中，标识已经增强处理；
  * 		3）、如果当前bean需要增强，创建当前bean的代理对象 createProxy ；
  * 			1）、获取所有增强器（通知方法）
