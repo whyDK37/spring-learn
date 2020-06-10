@@ -1,6 +1,8 @@
 package pojo;
 
+import java.util.Date;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class User {
 
@@ -9,6 +11,8 @@ public class User {
 
   private CityEnum city;
   private List<CityEnum> workCities;
+
+  private Date birthday;
 
   public Integer getId() {
     return id;
@@ -46,13 +50,23 @@ public class User {
     return this;
   }
 
+  public Date getBirthday() {
+    return birthday;
+  }
+
+  public User setBirthday(Date birthday) {
+    this.birthday = birthday;
+    return this;
+  }
+
   @Override
   public String toString() {
-    return "User{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        ", city=" + city +
-        ", workCities=" + workCities +
-        '}';
+    return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
+        .add("id=" + id)
+        .add("name='" + name + "'")
+        .add("city=" + city)
+        .add("workCities=" + workCities)
+        .add("birthday=" + birthday)
+        .toString();
   }
 }

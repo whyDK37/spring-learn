@@ -6,8 +6,15 @@ server:
     max-http-post-size: -1
 
 # mvc
-spring.mvc.view.prefix: /WEB-INF/jsp/
-spring.mvc.view.suffix: .jsp
+spring:
+  jackson:
+    deserialization:
+      
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
 
 
 
