@@ -30,7 +30,7 @@ public class InjectionResourceDemo {
 
   @Value("classpath:/META-INF/default.properties")
   private Resource defaultProperty;
-  @Value("classpath*:/META-INF/*.properties")
+  @Value("classpath*:/META-INF/*/*.properties")
   private Resource[] resources;
   @Value("classpath*:/META-INF/*.properties")
   private List<Resource> resourceCollection;
