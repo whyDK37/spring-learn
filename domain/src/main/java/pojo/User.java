@@ -2,7 +2,7 @@ package pojo;
 
 import java.util.Date;
 import java.util.List;
-import java.util.StringJoiner;
+import java.util.Properties;
 
 public class User {
 
@@ -13,6 +13,19 @@ public class User {
   private List<CityEnum> workCities;
 
   private Date birthday;
+
+
+  private Address address;
+
+  private Properties context;
+
+  public Properties getContext() {
+    return context;
+  }
+
+  public void setContext(Properties context) {
+    this.context = context;
+  }
 
   public Integer getId() {
     return id;
@@ -59,14 +72,24 @@ public class User {
     return this;
   }
 
+  public Address getAddress() {
+    return address;
+  }
+
+  public void setAddress(Address address) {
+    this.address = address;
+  }
+
   @Override
   public String toString() {
-    return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
-        .add("id=" + id)
-        .add("name='" + name + "'")
-        .add("city=" + city)
-        .add("workCities=" + workCities)
-        .add("birthday=" + birthday)
-        .toString();
+    return "User{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", city=" + city +
+        ", workCities=" + workCities +
+        ", birthday=" + birthday +
+        ", address=" + address +
+        ", context=" + context +
+        '}';
   }
 }

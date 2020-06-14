@@ -33,9 +33,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *  3）、开启基于注解的aop模式；@EnableAspectJAutoProxy
  *
  * AOP原理：【看给容器中注册了什么组件，这个组件什么时候工作，这个组件的功能是什么？】
- *        @EnableAspectJAutoProxy；
+ *        {@link EnableAspectJAutoProxy}；
  * 1、@ EnableAspectJAutoProxy 是什么？
- *        @Import(AspectJAutoProxyRegistrar.class)：给容器中导入AspectJAutoProxyRegistrar, 实现了ImportBeanDefinitionRegistrar接口
+ *        {@link @Import(AspectJAutoProxyRegistrar.class)}：给容器中导入AspectJAutoProxyRegistrar, 实现了ImportBeanDefinitionRegistrar接口
  *          利用AspectJAutoProxyRegistrar自定义给容器中注册bean；BeanDefinetion
  * 			internalAutoProxyCreator = AnnotationAwareAspectJAutoProxyCreator
  *          给容器中注册一个 AnnotationAwareAspectJAutoProxyCreator， beanName = internalAutoProxyCreator；
@@ -182,6 +182,25 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * 					正常执行：前置通知 -> 目标方法 -> 后置通知 -> 返回通知
  * 					出现异常：前置通知 -> 目标方法 -> 后置通知 -> 异常通知
  *
+ *   例子1：
+ *   当容器中存在，MethodValidationPostProcessor 和 AnnotationAwareAspectJAutoProxyCreator 时，(order 都是最低的)
+ *   当执行 postProcessAfterInitialization 时创建代理类，
+   *   先执行 AnnotationAwareAspectJAutoProxyCreator 再执行 MethodValidationPostProcessor ，
+ *    MethodValidationPostProcessor 的 postProcessAfterInitialization 方法中有一个逻辑，当对象是 Advised 时。
+ *    如果条件成立，调用 addAdvisor 添加切面功能。
+ *
+ *    if (bean instanceof Advised) {
+ * 			Advised advised = (Advised) bean;
+ * 			if (!advised.isFrozen() && isEligible(AopUtils.getTargetClass(bean))) {
+ * 				// Add our local Advisor to the existing proxy's Advisor chain...
+ * 				if (this.beforeExistingAdvisors) {
+ * 					advised.addAdvisor(0, this.advisor);
+ *        }	else {
+ * 					advised.addAdvisor(this.advisor);
+ *        }
+ * 				return bean;
+ * 			}
+ * 		}
  *
  * </pre>
  */

@@ -3,50 +3,12 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-
-<!--  <build>-->
-<!--    <plugins>-->
-<!--      <plugin>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--        <version>2.2.6.RELEASE</version>-->
-<!--      </plugin>-->
-<!--    </plugins>-->
-
-<!--  </build>-->
-  <dependencies>
-    <!--  self module-->
-    <dependency>
-      <artifactId>domain</artifactId>
-      <groupId>me</groupId>
-      <version>1.0</version>
-    </dependency>
-
-    <!-- spring framework -->
-    <dependency>
-      <artifactId>spring-context</artifactId>
-      <groupId>org.springframework</groupId>
-      <version>${spring.version}</version>
-    </dependency>
-  </dependencies>
   <artifactId>spring-learn</artifactId>
   <groupId>me</groupId>
   <modelVersion>4.0.0</modelVersion>
   <description>spring-learn project for Spring Boot</description>
   <name>spring-learn</name>
-
-
-  <modules>
-    <module>springboot-metrics</module>
-    <module>spring-annotation</module>
-    <module>springmvc-annotation</module>
-    <module>servlet3.0</module>
-    <module>spring-cloud-parent</module>
-    <module>spring-boot-parent</module>
-    <module>spring-data</module>
-    <module>spring-framework</module>
-    <module>domain</module>
-  </modules>
+  <version>1.0</version>
 
   <packaging>pom</packaging>
 
@@ -66,12 +28,42 @@
 
     <guava.version>29.0-jre</guava.version>
     <spark-version>2.0.2</spark-version>
-    <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
-    <spring-cloud.version>2.3.0.RELEASE</spring-cloud.version>
 
-    <spring.version>5.2.0.RELEASE</spring.version>
+    <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+    <spring-cloud.version>2.2.3.RELEASE</spring-cloud.version>
+    <spring.version>5.2.6.RELEASE</spring.version>
   </properties>
 
 
-  <version>1.0</version>
+
+
+  <modules>
+    <module>springboot-metrics</module>
+    <module>spring-annotation</module>
+    <module>springmvc-annotation</module>
+    <module>servlet3.0</module>
+    <module>spring-cloud-parent</module>
+    <module>spring-boot-parent</module>
+    <module>spring-data</module>
+    <module>spring-framework</module>
+    <module>domain</module>
+  </modules>
+
+  <dependencies>
+    <!--  self module-->
+    <dependency>
+      <artifactId>domain</artifactId>
+      <groupId>me</groupId>
+      <version>1.0</version>
+    </dependency>
+
+    <!-- spring framework -->
+    <dependency>
+      <artifactId>spring-context</artifactId>
+      <groupId>org.springframework</groupId>
+      <version>${spring.version}</version>
+    </dependency>
+  </dependencies>
+
+
 </project>
