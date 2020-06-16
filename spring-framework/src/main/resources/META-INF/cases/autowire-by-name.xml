@@ -12,6 +12,6 @@
   <bean class="cases.AutowiredConfig"/>
   <bean id="service" class="cases.Service"/>
 
-  <bean id="remoteStore" class="cases.RemoteStore" primary="true"/>
+  <bean id="remoteStore" class="cases.RemoteStore"/>
 
 </beans>
