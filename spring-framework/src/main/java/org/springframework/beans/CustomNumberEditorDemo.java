@@ -1,6 +1,5 @@
 package org.springframework.beans;
 
-import java.beans.PropertyEditor;
 import org.springframework.beans.propertyeditors.CustomNumberEditor;
 
 public class CustomNumberEditorDemo {
