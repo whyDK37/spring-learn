@@ -7,8 +7,8 @@ server:
 
 # mvc
 spring:
-  jackson:
-    deserialization:
+#  jackson:
+#    deserialization:
       
   mvc:
     view:
