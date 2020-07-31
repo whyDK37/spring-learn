@@ -3,24 +3,22 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <artifactId>spring-learn</artifactId>
-  <groupId>me</groupId>
   <modelVersion>4.0.0</modelVersion>
+
+  <groupId>why</groupId>
+  <artifactId>spring-learn</artifactId>
+  <version>1.0</version>
   <description>spring-learn project for Spring Boot</description>
   <name>spring-learn</name>
-  <version>1.0</version>
 
   <packaging>pom</packaging>
 
   <properties>
     <build.file.encoding>UTF-8</build.file.encoding>
-    <junit.version>5.6.1</junit.version>
     <maven.compiler.source>1.8</maven.compiler.source>
-
     <maven.compiler.target>1.8</maven.compiler.target>
 
     <maven.test.skip>true</maven.test.skip>
-    <mysql.driver.version>8.0.13</mysql.driver.version>
     <scala-version>2.10</scala-version>
 
     <sentinel.version>1.6.3</sentinel.version>
@@ -29,10 +27,13 @@
     <guava.version>29.0-jre</guava.version>
     <spark-version>2.0.2</spark-version>
 
+    <mysql.driver.version>8.0.13</mysql.driver.version>
     <hikari.version>3.4.5</hikari.version>
     <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
     <spring-cloud.version>2.2.4.RELEASE</spring-cloud.version>
     <spring.version>5.2.7.RELEASE</spring.version>
+
+    <junit.version>5.6.1</junit.version>
   </properties>
 
 
@@ -48,13 +49,14 @@
     <module>spring-data</module>
     <module>spring-framework</module>
     <module>domain</module>
+    <module>diagnosis</module>
   </modules>
 
   <dependencies>
     <!--  self module-->
     <dependency>
       <artifactId>domain</artifactId>
-      <groupId>me</groupId>
+      <groupId>why</groupId>
       <version>1.0</version>
     </dependency>
 

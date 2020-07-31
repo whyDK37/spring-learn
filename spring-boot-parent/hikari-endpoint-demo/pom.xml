@@ -11,7 +11,7 @@
     <version>2.3.1.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>me</groupId>
+  <groupId>why</groupId>
   <artifactId>springboot-metrics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>

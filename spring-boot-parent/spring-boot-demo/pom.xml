@@ -22,7 +22,7 @@
 
     <dependency>
       <artifactId>domain</artifactId>
-      <groupId>me</groupId>
+      <groupId>why</groupId>
       <version>1.0</version>
     </dependency>
 
