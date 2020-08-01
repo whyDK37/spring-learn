@@ -1,18 +1,10 @@
 package why.manager;
 
 import java.util.List;
-import javax.annotation.Resource;
-import org.springframework.stereotype.Component;
 import pojo.User;
-import why.mapper.UserMapper;
 
-@Component
-public class UserManager {
+public interface UserManager {
 
-  @Resource
-  UserMapper userMapperAA;
+  List<User> getAllUser();
 
-  public List<User> getAllUser() {
-    return userMapperAA.getById();
-  }
 }

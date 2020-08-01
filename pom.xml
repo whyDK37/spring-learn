@@ -37,10 +37,8 @@
   </properties>
 
 
-
-
   <modules>
-<!--    <module>springboot-metrics</module>-->
+    <!--    <module>springboot-metrics</module>-->
     <module>spring-annotation</module>
     <module>springmvc-annotation</module>
     <module>servlet3.0</module>

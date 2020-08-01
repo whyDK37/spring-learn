@@ -1,7 +1,7 @@
 package why.controller;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +13,8 @@ import why.manager.UserManager;
 @RequestMapping("/testboot")
 public class TestBootController {
 
-  @Autowired
-  UserManager userManager;
+  @Resource(name = "UserManager")
+  private UserManager userManager;
 
   @RequestMapping("getuser")
   public List<User> getUser() {
