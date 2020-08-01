@@ -12,7 +12,7 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>why</groupId>
-  <artifactId>springboot-metrics</artifactId>
+  <artifactId>springboot-hikari-endpoint-metrics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
