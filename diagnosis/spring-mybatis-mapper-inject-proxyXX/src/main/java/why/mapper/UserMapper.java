@@ -4,6 +4,7 @@ package why.mapper;
 import java.util.List;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import pojo.User;
 
 @Repository
@@ -16,5 +17,6 @@ public interface UserMapper {
 //     @Result(column = "sex", property = "sex"),
 //     @Result(column = "age", property = "age")
 // })
+  @Transactional
   List<User> getById();
 }
