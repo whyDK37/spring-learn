@@ -7,22 +7,21 @@ server:
 
 # mvc
 spring:
-#  jackson:
-#    deserialization:
-      
+  #  jackson:
+  #    deserialization:
+
   mvc:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
 
+  # Thymeleaf 配置
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/thymeleaf/
+    ## 取消缓存
+    cache: false
 
-
-
-# Thymeleaf 配置
-spring.thymeleaf.prefix: classpath:/thymeleaf/
-spring.thymeleaf.suffix: .html
-## 取消缓存
-spring.thymeleaf.cache: false
 
 management:
   endpoints:
@@ -51,3 +50,6 @@ info:
 logging:
   level:
     root: debug
+
+why:
+  config: false

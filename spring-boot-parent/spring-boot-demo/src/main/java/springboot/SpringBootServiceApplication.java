@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication()
@@ -17,7 +18,9 @@ public class SpringBootServiceApplication {
   public static void main(String[] args) {
     SpringApplication springApplication = new SpringApplication(SpringBootServiceApplication.class);
 
-    springApplication.run(args);
+    ConfigurableApplicationContext run = springApplication.run(args);
+
+    System.out.println(run.getBean("why"));
 
   }
 }
