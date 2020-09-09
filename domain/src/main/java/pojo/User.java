@@ -1,5 +1,6 @@
 package pojo;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -7,6 +8,7 @@ import java.util.Properties;
 public class User {
 
   private Integer id;
+  @JsonAlias("nm")
   private String name;
 
   private CityEnum city;

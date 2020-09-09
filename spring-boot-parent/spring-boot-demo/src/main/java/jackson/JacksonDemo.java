@@ -72,6 +72,9 @@ public class JacksonDemo {
     objectMapper = new ObjectMapper();
     objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL); //属性为NULL不序列化
     System.out.println(objectMapper.writeValueAsString(new User().setName("why")));
+    json = "{\"nm\":\"why\"}";
+    User user1 = objectMapper.readValue(json, User.class);
+    System.out.println(user1);
   }
 
   enum Color {

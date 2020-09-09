@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>why</groupId>
   <artifactId>spring-boot-parent</artifactId>
-  <version>2.3.2.RELEASE</version>
+  <version>2.3.1.RELEASE</version>
   <packaging>pom</packaging>
 
   <modules>
