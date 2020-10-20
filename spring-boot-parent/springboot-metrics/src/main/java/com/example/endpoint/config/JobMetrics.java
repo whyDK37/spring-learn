@@ -1,4 +1,4 @@
-package demo.metrics;
+package com.example.endpoint.config;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.Gauge;
@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Component;
 
-@Component
+/**
+ * @author wanghuanyu10
+ */
 public class JobMetrics implements MeterBinder {
 
   public Counter job1Counter;

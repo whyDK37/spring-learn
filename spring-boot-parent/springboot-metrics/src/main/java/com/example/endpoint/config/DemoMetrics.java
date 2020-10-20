@@ -1,4 +1,4 @@
-package demo.metrics;
+package com.example.endpoint.config;
 
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
@@ -6,6 +6,10 @@ import io.micrometer.core.instrument.binder.MeterBinder;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
+/**
+ * 自定义 MeterBinder
+ * @author wanghuanyu10
+ */
 public class DemoMetrics implements MeterBinder {
 
   AtomicInteger count = new AtomicInteger(0);

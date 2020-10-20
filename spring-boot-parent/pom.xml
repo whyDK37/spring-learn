@@ -9,9 +9,8 @@
   <packaging>pom</packaging>
 
   <modules>
-<!--    <module>spring-boot-demo</module>-->
     <module>spring-boot-tx-long-time</module>
-    <module>springboot-hikari-endpoint-metrics</module>
+    <module>springboot-metrics</module>
   </modules>
 
 
