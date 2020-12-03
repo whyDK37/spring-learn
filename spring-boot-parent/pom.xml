@@ -3,10 +3,28 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>why</groupId>
+
+  <parent>
+    <groupId>why</groupId>
+    <artifactId>spring-learn</artifactId>
+    <version>1.0</version>
+  </parent>
+
   <artifactId>spring-boot-parent</artifactId>
-  <version>2.3.1.RELEASE</version>
+  <version>1.0</version>
   <packaging>pom</packaging>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <modules>
     <module>spring-boot-tx-long-time</module>

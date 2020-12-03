@@ -3,7 +3,13 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>why</groupId>
+
+  <parent>
+    <groupId>why</groupId>
+    <artifactId>spring-boot-parent</artifactId>
+    <version>1.0</version>
+  </parent>
+
   <artifactId>spring-boot-tx-long-time</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>spring-boot-tx-long-time</name>
@@ -23,7 +29,7 @@
         <artifactId>spring-boot-dependencies</artifactId>
         <scope>import</scope>
         <type>pom</type>
-        <version>2.3.1.RELEASE</version>
+        <version>${spring-boot.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

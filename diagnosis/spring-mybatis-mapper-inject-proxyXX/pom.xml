@@ -9,6 +9,7 @@
     <artifactId>spring-learn</artifactId>
     <version>1.0</version>
   </parent>
+
   <artifactId>spring-mybatis-mapper-inject-proxyXX</artifactId>
 
   <dependencyManagement>
@@ -18,7 +19,7 @@
         <artifactId>spring-boot-dependencies</artifactId>
         <scope>import</scope>
         <type>pom</type>
-        <version>2.3.1.RELEASE</version>
+        <version>${spring-boot.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
