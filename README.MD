@@ -26,3 +26,14 @@ http://127.0.0.1:8080/browser/index.html#/actuator 可查看所有的 endpoint
 - [官方网址](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-metrics)
 - [micrometer](http://micrometer.io/docs)
 
+## [spring-cloud-parent](./spring-cloud-parent)
+
+### [spring-cloud-Netflix](./spring-cloud-parent/spring-cloud-Netflix)
+
+#### Eureka 用于 Spring 管理下的 Bean 服务发现
+#### Zuul 处理路由服务，被视为请求的 ”守门员“
+#### Ribbon 用于动态路由和负载均衡
+#### Hystrix 提供了断路器功能，以处理无响应的 API 调用
+- [Hystrix 源码解析 —— 命令合并执行](https://blog.csdn.net/cyq12345_/article/details/78780324)
+
+#### Turbine 提供了关于 Hystrix 的全部可用断路器的信息

@@ -18,13 +18,6 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring-boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
         <version>${spring-cloud.version}</version>
@@ -36,7 +29,6 @@
 
   <properties>
     <java.version>11</java.version>
-    <spring-cloud.version>Hoxton.SR6</spring-cloud.version>
   </properties>
 
   <dependencies>
@@ -64,7 +56,6 @@
       </plugin>
     </plugins>
   </build>
-
 
 
 </project>
