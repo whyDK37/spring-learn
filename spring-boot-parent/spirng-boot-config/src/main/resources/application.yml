@@ -1,0 +1,18 @@
+server:
+  port: 8088
+  mvc:
+    date-format: yyyy-MM-dd
+  tomcat:
+    max-http-post-size: -1
+spring:
+  #profiler
+  profiles:
+    active: dev
+why:
+  config: false
+  root: root
+  sub: sub
+  env: why
+  log:
+    prefix: LOG
+    level: INFO

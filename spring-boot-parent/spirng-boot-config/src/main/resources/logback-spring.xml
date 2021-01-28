@@ -1,0 +1,15 @@
+<configuration>
+  <!-- https://stackoverflow.com/questions/29322709/unable-to-use-spring-property-placeholders-in-logback-xml -->
+  <!-- https://github.com/spring-projects/spring-boot/commit/055ace37f006120b0006956b03c7f358d5f3729f -->
+  <springProperty name="prefix" source="why.log.prefix"/>
+  <springProperty name="level" source="why.log.level"/>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${prefix} %-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="${level}">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>
