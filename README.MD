@@ -1,3 +1,6 @@
+# 资料
+- [geekbang-lessons](https://github.com/geektime-geekbang/geekbang-lessons)
+  - thinking-in-spring
 
 # 注意事项
 1. 是用 idea 在子 module 运行程序是，user.dir 指向的是 root 工程，会导致某些问题。
