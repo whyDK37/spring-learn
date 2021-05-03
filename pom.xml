@@ -48,6 +48,7 @@
     <module>spring-framework</module>
     <module>domain</module>
     <module>diagnosis</module>
+    <module>spring-executor-monitor</module>
   </modules>
 
   <dependencies>
