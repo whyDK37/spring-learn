@@ -39,7 +39,7 @@ curl -i -H "Accept-Language:zh-CN,zh;q=0.9" -H "Accept:application/xml"  http://
 这个流程图有个前提，是参数使用 @RequestBody，返回值使用 @ResponseBody。
 从核心流程中我们看到 RequestResponseBodyMethodProcessor 及处理请求参数也处理响应。
 
-![RequestResponseBodyMethodProcessor](doc\spring\web\RequestResponseBodyMethodProcessor.png)
+![RequestResponseBodyMethodProcessor](RequestResponseBodyMethodProcessor.png)
 从图中可以看到 RequestResponseBodyMethodProcessor 实现了 HandlerMethodArgumentResolver 和 HandlerMethodReturnValueHandler 两个接口，所以在这个特定的流程中，RequestResponseBodyMethodProcessor 处于流程的核心位置。
 
 ```
