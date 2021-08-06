@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spirng-boot-config</artifactId>
+  <artifactId>spring-boot-config</artifactId>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
@@ -20,6 +20,12 @@
     <dependency>
       <artifactId>spring-boot-starter-web</artifactId>
       <groupId>org.springframework.boot</groupId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+      <version>${caffeine.version}</version>
     </dependency>
   </dependencies>
 </project>

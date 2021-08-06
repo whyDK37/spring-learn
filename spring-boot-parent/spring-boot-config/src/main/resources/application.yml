@@ -8,6 +8,11 @@ spring:
   #profiler
   profiles:
     active: dev
+  cache:
+    type: caffeine
+    cache-names: cache
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=PT2S
 why:
   config: false
   root: root
