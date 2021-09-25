@@ -35,10 +35,10 @@ public class Controller {
     }
 
     @RequestMapping("/sayPersons")
-    public String sayPersons(
+    public List<Person> sayPersons(
             @RequestJSONParam(name = "persons", required = false) List<Person> persons) {
         System.out.println("persons = " + persons);
-        return "ok";
+        return persons;
     }
 
 

@@ -1,5 +1,5 @@
 
-![spring mvc 主流程](../../../images/spring/web/spirng%20mvc%20主流程.png)
+![spring mvc 主流程](../../images/spring/web/spirng%20mvc%20主流程.png)
 
 # spring mvc Content negotiation 内容協商
 
@@ -35,7 +35,7 @@ curl -i -H "Accept-Language:zh-CN,zh;q=0.9" -H "Accept:application/xml"  http://
 
 ## 核心流程
 
-![](../../../images/spring/web/flow-RequestBody-ResponseBody.png)
+![](../../images/spring/web/flow-RequestBody-ResponseBody.png)
 这个流程图有个前提，是参数使用 @RequestBody，返回值使用 @ResponseBody。
 从核心流程中我们看到 RequestResponseBodyMethodProcessor 及处理请求参数也处理响应。
 

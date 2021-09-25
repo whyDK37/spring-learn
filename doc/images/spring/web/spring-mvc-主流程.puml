@@ -1,0 +1,29 @@
+@startuml
+
+== Initialization ==
+
+User -> DispatcherServlet: DispatcherServlet 接受请求
+
+DispatcherServlet -> HandlerAdapter: 获取 HandlerAdapter
+HandlerAdapter -> DispatcherServlet: 返回 HandlerAdapter
+
+HandlerAdapter -> DispatcherServlet: this.getHandler 获取 HandlerExecutionChain
+
+== 调用 ==
+DispatcherServlet -> HandlerAdapter : handle 方法
+HandlerAdapter -> HandlerAdapter : 创建 ServletInvocableHandlerMethod
+HandlerAdapter -> ServletInvocableHandlerMethod : invokeAndHandle
+ServletInvocableHandlerMethod -> ServletInvocableHandlerMethod : invokeForRequest
+ServletInvocableHandlerMethod -> ServletInvocableHandlerMethod : getMethodArgumentValues
+note right : 获取参数
+
+== 返回 ==
+ServletInvocableHandlerMethod -> HandlerMethodReturnValueHandlerComposite : returnValueHandlers
+
+HandlerMethodReturnValueHandlerComposite -> HandlerMethodReturnValueHandlerComposite: 获取 HandlerMethodReturnValueHandler
+note right : 获取返回值处理对象
+
+== 处理返回值 ==
+HandlerMethodReturnValueHandler -> HandlerMethodReturnValueHandler: handleReturnValue
+HandlerMethodReturnValueHandler -> HandlerMethodReturnValueHandler: writeWithMessageConverters
+@enduml
