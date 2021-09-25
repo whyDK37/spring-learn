@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pojo.Person;
+import why.web.bind.annotation.RequestJSONParam;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class Controller {
 
     @RequestMapping("/sayPersons")
     public String sayPersons(
-            @RequestParam(name = "persons", required = false) List<Person> persons) {
+            @RequestJSONParam(name = "persons", required = false) List<Person> persons) {
         System.out.println("persons = " + persons);
         return "ok";
     }
