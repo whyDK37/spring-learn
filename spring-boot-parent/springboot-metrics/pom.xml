@@ -38,22 +38,26 @@
       <groupId>io.micrometer</groupId>
       <artifactId>micrometer-registry-prometheus</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.prometheus</groupId>
+      <artifactId>simpleclient_pushgateway</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-jdbc</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.apache.tomcat</groupId>
-          <artifactId>tomcat-jdbc</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-starter-jdbc</artifactId>-->
+<!--      <exclusions>-->
+<!--        <exclusion>-->
+<!--          <groupId>org.apache.tomcat</groupId>-->
+<!--          <artifactId>tomcat-jdbc</artifactId>-->
+<!--        </exclusion>-->
+<!--      </exclusions>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>org.aspectj</groupId>
@@ -69,17 +73,17 @@
       <version>3.2.12</version>
     </dependency>
     <!-- exclude tomcat-jdbc, Spring Boot will use HikariCP automatically  -->
-    <dependency>
-      <groupId>com.zaxxer</groupId>
-      <artifactId>HikariCP</artifactId>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.zaxxer</groupId>-->
+<!--      <artifactId>HikariCP</artifactId>-->
+<!--    </dependency>-->
 
 
     <!-- actuator聚合图形化插件 访问地址 http://127.0.0.1:8080 -->
-    <dependency>
-      <artifactId>spring-data-rest-hal-browser</artifactId>
-      <groupId>org.springframework.data</groupId>
-    </dependency>
+<!--    <dependency>-->
+<!--      <artifactId>spring-data-rest-hal-browser</artifactId>-->
+<!--      <groupId>org.springframework.data</groupId>-->
+<!--    </dependency>-->
 
     <!-- 汇总端点信息 -->
     <dependency>
@@ -87,10 +91,10 @@
       <groupId>org.springframework.boot</groupId>
     </dependency>
 
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>mysql</groupId>-->
+<!--      <artifactId>mysql-connector-java</artifactId>-->
+<!--    </dependency>-->
 
 
     <dependency>

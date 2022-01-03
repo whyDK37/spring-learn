@@ -1,38 +1,31 @@
 package com.example.endpoint.controller;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.concurrent.ExecutorService;
-import javax.annotation.Resource;
-import javax.sql.DataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.util.concurrent.ExecutorService;
 
 @RestController
 public class TestController {
 
-  @Autowired
-  private DataSource dataSource;
+    int i = 0;
+    @Resource
+    private ExecutorService asyncExecutor;
 
-  @Resource
-  private ExecutorService asyncExecutor;
-
-  @RequestMapping("/hello")
-  public String hello() {
-    try {
-      Connection connection = dataSource.getConnection();
-      connection.close();
-    } catch (SQLException throwables) {
-      throwables.printStackTrace();
+    @RequestMapping("/hello")
+    public String hello(HttpServletResponse response) {
+        if (i++ % 3 == 1) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }
+        return "hello";
     }
-    return "hello";
-  }
 
 
-  @RequestMapping("/async")
-  public String async() {
-    asyncExecutor.submit(() -> System.out.println("async print..."));
-    return "async";
-  }
+    @RequestMapping("/async")
+    public String async() {
+        asyncExecutor.submit(() -> System.out.println("async print..."));
+        return "async";
+    }
 }
