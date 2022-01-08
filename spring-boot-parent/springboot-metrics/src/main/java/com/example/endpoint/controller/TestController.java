@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
 @RestController
@@ -15,11 +17,13 @@ public class TestController {
     private ExecutorService asyncExecutor;
 
     @RequestMapping("/hello")
-    public String hello(HttpServletResponse response) {
+    public Map<String, String> hello(HttpServletResponse response) {
         if (i++ % 3 == 1) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
-        return "hello";
+        HashMap<String, String> objectObjectHashMap = new HashMap<>();
+        objectObjectHashMap.put("a", "hello");
+        return objectObjectHashMap;
     }
 
 
