@@ -1,7 +1,10 @@
 package com.example.endpoint.controller;
 
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import pojo.User;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -16,13 +19,14 @@ public class TestController {
     @Resource
     private ExecutorService asyncExecutor;
 
-    @RequestMapping("/hello")
-    public Map<String, String> hello(HttpServletResponse response) {
+    @RequestMapping(path = "/hello", method = {RequestMethod.GET})
+    public Map<String, Object> hello(HttpServletResponse response, @ModelAttribute User user) {
         if (i++ % 3 == 1) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
-        HashMap<String, String> objectObjectHashMap = new HashMap<>();
+        Map<String, Object> objectObjectHashMap = new HashMap<>();
         objectObjectHashMap.put("a", "hello");
+        objectObjectHashMap.put("user", user);
         return objectObjectHashMap;
     }
 
