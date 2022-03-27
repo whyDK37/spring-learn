@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+import javax.validation.constraints.NotNull;
 
 public class User {
 
+  @NotNull(message = "用户id为空")
   private Integer id;
   @JsonAlias("nm")
   private String name;

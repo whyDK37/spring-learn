@@ -30,6 +30,7 @@
     <module>spring-boot-tx-long-time</module>
     <module>springboot-metrics</module>
     <module>spring-boot-config</module>
+    <module>spring-boot-validation</module>
   </modules>
 
 
