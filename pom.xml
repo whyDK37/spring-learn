@@ -31,7 +31,7 @@
 <!--    <hikari.version>3.4.5</hikari.version>-->
     <spring-boot.version>2.6.2</spring-boot.version>
     <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
-    <spring.version>5.3.14</spring.version>
+    <spring.version>5.3.17</spring.version>
     <caffeine.version>3.0.4</caffeine.version>
 
     <junit.version>5.6.1</junit.version>
