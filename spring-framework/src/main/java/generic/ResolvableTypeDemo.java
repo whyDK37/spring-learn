@@ -10,7 +10,7 @@ import pojo.User;
 
 public class ResolvableTypeDemo {
 
-  private HashMap<Integer, List<String>> myMap;
+  private HashMap<Integer, List<String>> myMap = new HashMap<>();
 
   public static void main(String[] args) throws NoSuchFieldException, NoSuchMethodException {
 
@@ -18,11 +18,11 @@ public class ResolvableTypeDemo {
     t.getSuperType(); // AbstractMap<Integer, List<String>>
     t.getSuperType().resolve(); // AbstractMap<Integer, List<String>>
     t.asMap(); // Map<Integer, List<String>>
-    t.getGeneric(0).resolve(); // Integer
-    t.getGeneric(1).resolve(); // List
-    t.getGeneric(1); // List<String>
-    t.resolveGeneric(1, 0); // String
-    t.resolveGeneric(1, 1); // null
+    System.out.println("t.getGeneric(0).resolve() = " + t.getGeneric(0).resolve()); // Integer
+    System.out.println("t.getGeneric(1).resolve() = " + t.getGeneric(1).resolve()); // List
+    System.out.println("t.getGeneric(1) = " + t.getGeneric(1)); // List<String>
+    System.out.println("t.resolveGeneric(1, 0) = " + t.resolveGeneric(1, 0)); // String
+    System.out.println("t.resolveGeneric(1, 1) = " + t.resolveGeneric(1, 1)); // null
 
     // GenericB
     ResolvableType genericBType = ResolvableType.forClass(GenericB.class);
