@@ -1,0 +1,26 @@
+# Nacos : https://nacos.io/zh-cn/docs/concepts.html
+# Nacos
+spring:
+  cloud:
+    nacos:
+      config:
+        username: nacos
+        password: nacos
+        contextPath: /nacos
+        server-addr: localhost:8848
+#        如果不配置，默认使用 public
+        namespace: a3f4c56e-2425-45c1-80e1-e00d23229a6d
+        prefix: ${spring.application.name}
+        ext-config[0]:
+          group: DEFAULT_GROUP
+          data-id: logback-spring.xml
+          refresh: true
+        shared-configs:
+        refresh-enabled: true
+  profiles:
+    active: dev
+  application:
+    name: spring-cloud-alibaba-nacos
+#
+
+

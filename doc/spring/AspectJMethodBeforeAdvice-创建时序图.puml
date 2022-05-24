@@ -1,0 +1,17 @@
+@startuml
+开始 -> AspectJProxyFactory : addAspect, 参数 AspectConfiguration
+AspectJProxyFactory -> AspectJProxyFactory : addAdvisorsFromAspectInstanceFactory
+AspectJProxyFactory -> ReflectiveAspectJAdvisorFactory : getAdvisors
+
+ReflectiveAspectJAdvisorFactory -> ReflectiveAspectJAdvisorFactory : getAdvisorMethods
+ReflectiveAspectJAdvisorFactory -> ReflectiveAspectJAdvisorFactory : getAdvisor
+ReflectiveAspectJAdvisorFactory -> InstantiationModelAwarePointcutAdvisorImpl : new InstantiationModelAwarePointcutAdvisorImpl
+InstantiationModelAwarePointcutAdvisorImpl -> InstantiationModelAwarePointcutAdvisorImpl : instantiateAdvice
+
+InstantiationModelAwarePointcutAdvisorImpl -> ReflectiveAspectJAdvisorFactory : getAdvice
+ReflectiveAspectJAdvisorFactory -> AspectJMethodBeforeAdvice: new AspectJMethodBeforeAdvice
+ReflectiveAspectJAdvisorFactory -> InstantiationModelAwarePointcutAdvisorImpl : new InstantiationModelAwarePointcutAdvisorImpl
+ReflectiveAspectJAdvisorFactory -> ReflectiveAspectJAdvisorFactory : #getAdvisor() return advice
+ReflectiveAspectJAdvisorFactory -> AspectJProxyFactory : 返回 advisors
+AspectJProxyFactory -> AspectJProxyFactory : addAdvisors
+@enduml

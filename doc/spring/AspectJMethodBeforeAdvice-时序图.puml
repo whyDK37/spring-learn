@@ -1,0 +1,8 @@
+@startuml
+应用 --> method
+method --> MethodBeforeAdviceInterceptor
+
+MethodBeforeAdviceInterceptor --> AspectJMethodBeforeAdvice : 包装了 AspectConfiguration
+
+AspectJMethodBeforeAdvice --> AspectJMethodBeforeAdvice: invokeAdviceMethod
+@enduml

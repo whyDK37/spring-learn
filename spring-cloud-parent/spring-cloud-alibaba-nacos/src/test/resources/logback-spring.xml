@@ -1,0 +1,13 @@
+<configuration>
+  <springProperty name="prefix" source="why.log.prefix"/>
+  <springProperty name="level" source="why.log.level"/>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${prefix} %-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="info">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>
