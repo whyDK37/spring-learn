@@ -1,17 +1,17 @@
 package pojo;
 
-import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
-import com.fasterxml.jackson.annotation.JsonValue;
+//import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
+//import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum CityEnum {
   BEIJING(1, "北京"),
   SHANGHAI(2, "上海"),
   HANGZHOU(3, "杭州"),
-  @JsonEnumDefaultValue
+//  @JsonEnumDefaultValue
   UNKNOW(-1, "未知"),
   ;
 
-  @JsonValue
+//  @JsonValue
   private final int code;
   private final String desc;
 
