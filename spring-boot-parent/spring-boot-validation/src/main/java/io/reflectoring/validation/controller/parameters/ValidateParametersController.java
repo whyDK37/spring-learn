@@ -1,8 +1,10 @@
 package io.reflectoring.validation.controller.parameters;
 
+import io.reflectoring.validation.service.ValidateParametersService;
 import javax.validation.ConstraintViolationException;
 import javax.validation.constraints.Min;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,9 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 class ValidateParametersController {
 
+  @Autowired
+  private ValidateParametersService validateParametersService;
   @GetMapping("/validatePathVariable/{id}")
   ResponseEntity<String> validatePathVariable(@PathVariable("id") @Min(5) int id) {
-    return ResponseEntity.ok("valid");
+    return ResponseEntity.ok(ValidateParametersService.validatePathVariable(id));
   }
 
   @GetMapping("/validateRequestParameter")
