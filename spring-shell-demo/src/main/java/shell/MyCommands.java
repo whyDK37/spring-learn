@@ -3,8 +3,6 @@ package shell;
 import org.springframework.shell.Availability;
 import org.springframework.shell.CompletionContext;
 import org.springframework.shell.CompletionProposal;
-import org.springframework.shell.completion.CompletionResolver;
-import org.springframework.shell.context.InteractionMode;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
@@ -28,12 +26,11 @@ public class MyCommands {
 
     @ShellMethod(value = "complete", key = "complete")
     public String complete(
-            @ShellOption(valueProvider = MyValuesProvider.class) String arg1)
-    {
+            @ShellOption(valueProvider = MyValuesProvider.class) String arg1) {
         return "You said " + arg1;
     }
 
-    @ShellMethod(key = "hello-world", group = "why",interactionMode = InteractionMode.INTERACTIVE)
+    @ShellMethod(key = "hello-world", value = "hello world", group = "why")
     public String helloWorld(@ShellOption(defaultValue = "spring") String arg) {
         return "Hello world " + arg;
     }
