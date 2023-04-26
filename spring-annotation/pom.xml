@@ -9,32 +9,31 @@
   <parent>
     <groupId>why</groupId>
     <artifactId>spring-learn</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
+
   <artifactId>spring-annotation</artifactId>
+
+
   <dependencies>
     <dependency>
       <artifactId>domain</artifactId>
       <groupId>why</groupId>
-      <version>1.0</version>
     </dependency>
 
     <dependency>
       <artifactId>spring-context</artifactId>
       <groupId>org.springframework</groupId>
-      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <artifactId>spring-aspects</artifactId>
       <groupId>org.springframework</groupId>
-      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <artifactId>spring-jdbc</artifactId>
       <groupId>org.springframework</groupId>
-      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
@@ -42,25 +41,28 @@
       <groupId>javax.inject</groupId>
       <version>1</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+    </dependency>
+
 
     <dependency>
       <artifactId>HikariCP</artifactId>
       <groupId>com.zaxxer</groupId>
-      <version>3.4.2</version>
     </dependency>
 
 
     <dependency>
       <artifactId>mysql-connector-java</artifactId>
       <groupId>mysql</groupId>
-      <version>8.0.16</version>
     </dependency>
 
     <dependency>
       <artifactId>junit-jupiter-api</artifactId>
       <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
-      <version>${junit.version}</version>
     </dependency>
   </dependencies>
 

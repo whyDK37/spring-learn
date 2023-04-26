@@ -7,11 +7,11 @@
   <parent>
     <groupId>why</groupId>
     <artifactId>spring-boot-parent</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>spring-boot-tx-long-time</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>spring-boot-tx-long-time</name>
   <description>Demo project for Spring Boot</description>
 
@@ -21,18 +21,6 @@
     <maven.compiler.target>1.11</maven.compiler.target>
   </properties>
 
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <scope>import</scope>
-        <type>pom</type>
-        <version>${spring-boot.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <dependencies>
     <dependency>

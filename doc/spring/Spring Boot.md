@@ -4006,7 +4006,7 @@ mybatis-spring-boot-starter；自定义启动器名-spring-boot-starter
         <dependency>
             <groupId>com.atguigu.starter</groupId>
             <artifactId>atguigu-spring-boot-starter-autoconfigurer</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -4023,7 +4023,7 @@ mybatis-spring-boot-starter；自定义启动器名-spring-boot-starter
 
    <groupId>com.atguigu.starter</groupId>
    <artifactId>atguigu-spring-boot-starter-autoconfigurer</artifactId>
-   <version>0.0.1-SNAPSHOT</version>
+   <version>1.0.0-SNAPSHOT</version>
    <packaging>jar</packaging>
 
    <name>atguigu-spring-boot-starter-autoconfigurer</name>

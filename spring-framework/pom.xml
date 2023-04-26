@@ -7,7 +7,7 @@
   <parent>
     <groupId>why</groupId>
     <artifactId>spring-learn</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>spring-framework</artifactId>
 
@@ -19,6 +19,13 @@
       <groupId>why</groupId>
       <version>1.0</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+    </dependency>
+
     <dependency>
       <artifactId>spring-context</artifactId>
       <groupId>org.springframework</groupId>
