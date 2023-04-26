@@ -1,0 +1,7 @@
+spring:
+  shell:
+    help:
+      enabled: true
+      long-names: help
+      short-names: h
+      command: help
