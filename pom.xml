@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -49,20 +49,13 @@
 
         <caffeine.version>3.0.4</caffeine.version>
 
-    <skywalking.version>8.11.0</skywalking.version>
+        <skywalking.version>8.11.0</skywalking.version>
 
-    <junit.version>5.6.1</junit.version>
-  </properties>
+        <junit.version>5.6.1</junit.version>
+    </properties>
 
 
-  <dependencyManagement>
-    <dependencies>
-      <!--  self module-->
-      <dependency>
-        <artifactId>domain</artifactId>
-        <groupId>why</groupId>
-        <version>1.0</version>
-      </dependency>
+    <dependencyManagement>
         <dependencies>
             <!--  self module-->
             <dependency>
@@ -70,38 +63,43 @@
                 <groupId>why</groupId>
                 <version>1.0</version>
             </dependency>
+            <!--  self module-->
+            <dependency>
+                <artifactId>domain</artifactId>
+                <groupId>why</groupId>
+                <version>1.0</version>
+            </dependency>
 
-      <!-- spring framework -->
-      <dependency>
-        <artifactId>spring-context</artifactId>
-        <groupId>org.springframework</groupId>
-        <version>${spring.version}</version>
-      </dependency>
+            <!-- spring framework -->
+            <dependency>
+                <artifactId>spring-context</artifactId>
+                <groupId>org.springframework</groupId>
+                <version>${spring.version}</version>
+            </dependency>
 
-      <dependency>
-        <groupId>org.javassist</groupId>
-        <artifactId>javassist</artifactId>
-        <version>3.23.1-GA</version>
-      </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.23.1-GA</version>
+            </dependency>
 
-      <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>fastjson</artifactId>
-        <version>1.2.79</version>
-      </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.79</version>
+            </dependency>
 
-      <dependency>
-        <groupId>org.apache.skywalking</groupId>
-        <artifactId>apm-toolkit-trace</artifactId>
-        <version>${skywalking.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.skywalking</groupId>
-        <artifactId>apm-toolkit-logback-1.x</artifactId>
-        <version>${skywalking.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-logback-1.x</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
